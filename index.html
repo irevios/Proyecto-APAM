@@ -37,7 +37,7 @@
     var data = xml.parse();
     $("#demo").append("<td>"+ data.APAM.registros.registro[0].planta + "</td>");
 
-    $("#demo").append("<td>"+ $(data).find('registro').att('r04').planta + "</td>");
+    $("#demo").append("<td>"+ $(data.registros).find('r04').planta + "</td>");
     </script>
 </body>
 </html>
