@@ -6,28 +6,28 @@
 			<humedad_aire_opt max="90" min="40"/>
 			<humedad_tierra_opt max="90" min="70"/>
 			<luminosidad_opt max="90" min="60"/>
-			<emocion cantidad="78" emocionactual="rel"/>
+			<emocion cantidad="78" actual="rel"/>
 		</planta>
 		<planta id="P02" nombre="poto">
 			<temperatura_opt max="40" min="15"/>
 			<humedad_aire_opt max="50" min="0"/>
 			<humedad_tierra_opt max="50" min="5"/>
 			<luminosidad_opt max="70" min="40"/>
-			<emocion cantidad="97" emocionactual="fel"/>
+			<emocion cantidad="97" actual="fel"/>
 		</planta>
 		<planta id="P03" nombre="cactus">
 			<temperatura_opt max="45" min="20"/>
 			<humedad_aire_opt max="20" min="0"/>
 			<humedad_tierra_opt max="30" min="5"/>
 			<luminosidad_opt max="100" min="70"/>
-			<emocion cantidad="68" emocionactual="emp"/>
+			<emocion cantidad="68" actual="emp"/>
 		</planta>
 		<planta id="P04" nombre="culantrillo">
 			<temperatura_opt max="30" min="15"/>
 			<humedad_aire_opt max="100" min="70"/>
 			<humedad_tierra_opt max="40" min="20"/>
 			<luminosidad_opt max="60" min="25"/>
-			<emocion cantidad="58" emocionactual="est"/>
+			<emocion cantidad="58" actual="est"/>
 		</planta>
 	</plantas>
 	<emociones>
