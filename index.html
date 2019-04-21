@@ -55,7 +55,7 @@
 	<script type="text/javascript" src="jkl-parsexml.js"></script>
 	<script>
     var archivo = "datos.xml";
-    var xml = new JKL.ParseXML(archivo);
+    var xml = new JKL.ParseXML(	archivo);
     var datos = xml.parse();
     var resultado = "";
     for(var i=0;i<Object.keys(datos.APAM.registros.registro).length ;i++){
@@ -63,7 +63,7 @@
     	resultado += "<tr><td>"+ datos.APAM.registros.registro[i].id + "</td>";
     	
     	for(var j=0;j<Object.keys(datos.APAM.plantas.planta);j++){
-    		if(datos.APAM.registros[i].planta == datos.APAM.plantas[j].id){
+    		if(datos.APAM.registros[i].planta+"" == datos.APAM.plantas[j].id+""){
     			resultado +="<td>" + datos.APAM.plantas.planta[j].nombre + "</td>";
     		}
 	    }
