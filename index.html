@@ -35,7 +35,7 @@
     var url = "datos.xml";
     var xml = new JKL.ParseXML( url );
     var data = xml.parse();
-    $("#demo").append("<td>"+ data.APAM.plantas.planta.temperatura + "</td>");
+    $("#demo").append("<td>"+ data.APAM.plantas.planta[id="P01"].temperatura-opt.getAttribute() + "</td>");
     </script>
 </body>
 </html>
