@@ -1,0 +1,298 @@
+{
+	"APAM": {
+		"plantas": {
+			"planta": [
+				{
+					"temperatura-opt": {
+						"_min": "15",
+						"_max": "30"
+					},
+					"humedad-aire-opt": {
+						"_min": "40",
+						"_max": "90"
+					},
+					"humedad-tierra-opt": {
+						"_min": "70",
+						"_max": "90"
+					},
+					"luminosidad-opt": {
+						"_min": "60",
+						"_max": "90"
+					},
+					"emocion": {
+						"_cantidad": "78",
+						"_emocionactual": "rel"
+					},
+					"_id": "P01",
+					"_nombre": "gardenia"
+				},
+				{
+					"temperatura-opt": {
+						"_min": "15",
+						"_max": "40"
+					},
+					"humedad-aire-opt": {
+						"_min": "0",
+						"_max": "50"
+					},
+					"humedad-tierra-opt": {
+						"_min": "5",
+						"_max": "50"
+					},
+					"luminosidad-opt": {
+						"_min": "40",
+						"_max": "70"
+					},
+					"emocion": {
+						"_cantidad": "97",
+						"_emocionactual": "fel"
+					},
+					"_id": "P02",
+					"_nombre": "poto"
+				},
+				{
+					"temperatura-opt": {
+						"_min": "20",
+						"_max": "45"
+					},
+					"humedad-aire-opt": {
+						"_min": "0",
+						"_max": "20"
+					},
+					"humedad-tierra-opt": {
+						"_min": "5",
+						"_max": "30"
+					},
+					"luminosidad-opt": {
+						"_min": "70",
+						"_max": "100"
+					},
+					"emocion": {
+						"_cantidad": "68",
+						"_emocionactual": "emp"
+					},
+					"_id": "P03",
+					"_nombre": "cactus"
+				},
+				{
+					"temperatura-opt": {
+						"_min": "15",
+						"_max": "30"
+					},
+					"humedad-aire-opt": {
+						"_min": "70",
+						"_max": "100"
+					},
+					"humedad-tierra-opt": {
+						"_min": "20",
+						"_max": "40"
+					},
+					"luminosidad-opt": {
+						"_min": "25",
+						"_max": "60"
+					},
+					"emocion": {
+						"_cantidad": "58",
+						"_emocionactual": "est"
+					},
+					"_id": "P04",
+					"_nombre": "culantrillo"
+				}
+			]
+		},
+		"emociones": {
+			"emocion": [
+				{
+					"_id": "fel",
+					"_nombre": "feliz",
+					"_rangomin": "91",
+					"_rangomax": "100"
+				},
+				{
+					"_id": "rel",
+					"_nombre": "relajada",
+					"_rangomin": "76",
+					"_rangomax": "90"
+				},
+				{
+					"_id": "emp",
+					"_nombre": "empachada",
+					"_rangomin": "61",
+					"_rangomax": "75"
+				},
+				{
+					"_id": "est",
+					"_nombre": "estresada",
+					"_rangomin": "51",
+					"_rangomax": "60"
+				},
+				{
+					"_id": "enf",
+					"_nombre": "enfadada",
+					"_rangomin": "41",
+					"_rangomax": "50"
+				},
+				{
+					"_id": "tri",
+					"_nombre": "triste",
+					"_rangomin": "21",
+					"_rangomax": "40"
+				},
+				{
+					"_id": "poc",
+					"_nombre": "pocha",
+					"_rangomin": "0",
+					"_rangomax": "20"
+				}
+			]
+		},
+		"registros": {
+			"registro": [
+				{
+					"temperatura": "27",
+					"humedad-aire": "38",
+					"humedad-tierra": "72",
+					"luminosidad": "73",
+					"_id": "r01",
+					"_planta": "P01",
+					"_hora": "12",
+					"_min": "23",
+					"_seg": "23",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "40",
+					"humedad-tierra": "78",
+					"luminosidad": "60",
+					"_id": "r02",
+					"_planta": "P01",
+					"_hora": "12",
+					"_min": "40",
+					"_seg": "13",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "26",
+					"humedad-aire": "54",
+					"humedad-tierra": "76",
+					"luminosidad": "58",
+					"_id": "r03",
+					"_planta": "P01",
+					"_hora": "13",
+					"_min": "02",
+					"_seg": "57",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "38",
+					"humedad-tierra": "72",
+					"luminosidad": "73",
+					"_id": "r04",
+					"_planta": "P02",
+					"_hora": "12",
+					"_min": "23",
+					"_seg": "23",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "40",
+					"humedad-tierra": "78",
+					"luminosidad": "60",
+					"_id": "r05",
+					"_planta": "P02",
+					"_hora": "12",
+					"_min": "40",
+					"_seg": "13",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "26",
+					"humedad-aire": "54",
+					"humedad-tierra": "76",
+					"luminosidad": "58",
+					"_id": "r06",
+					"_planta": "P02",
+					"_hora": "13",
+					"_min": "02",
+					"_seg": "57",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "38",
+					"humedad-tierra": "72",
+					"luminosidad": "73",
+					"_id": "r07",
+					"_planta": "P03",
+					"_hora": "12",
+					"_min": "23",
+					"_seg": "23",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "40",
+					"humedad-tierra": "78",
+					"luminosidad": "60",
+					"_id": "r08",
+					"_planta": "P03",
+					"_hora": "12",
+					"_min": "40",
+					"_seg": "13",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "26",
+					"humedad-aire": "54",
+					"humedad-tierra": "76",
+					"luminosidad": "58",
+					"_id": "r09",
+					"_planta": "P03",
+					"_hora": "13",
+					"_min": "02",
+					"_seg": "57",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "38",
+					"humedad-tierra": "72",
+					"luminosidad": "73",
+					"_id": "r10",
+					"_planta": "P04",
+					"_hora": "12",
+					"_min": "23",
+					"_seg": "23",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "27",
+					"humedad-aire": "40",
+					"humedad-tierra": "78",
+					"luminosidad": "60",
+					"_id": "r11",
+					"_planta": "P04",
+					"_hora": "12",
+					"_min": "40",
+					"_seg": "13",
+					"_fecha": "02/04/2019"
+				},
+				{
+					"temperatura": "26",
+					"humedad-aire": "54",
+					"humedad-tierra": "76",
+					"luminosidad": "58",
+					"_id": "r12",
+					"_planta": "P04",
+					"_hora": "13",
+					"_min": "02",
+					"_seg": "57",
+					"_fecha": "02/04/2019"
+				}
+			]
+		}
+	}
+}
