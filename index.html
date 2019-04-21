@@ -35,10 +35,10 @@
     var url = "datos.xml";
     var xml = new JKL.ParseXML( url );
     var data = xml.parse();
-    $(data.APAM.registros).each(function(){
-  
-    	  $("#demo").append("<td>"+ $(this).fecha + "</td>");
-    });
+    for(var i=0;i<10;i++){
+    	$("#demo").append("<td>"+ data.APAM.registros.registro[0].fecha + "</td>");
+    }
+
     $("#demo").append("<td>"+ data.APAM.registros.registro[0].planta + "</td>");
     </script>
 </body>
