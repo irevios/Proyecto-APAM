@@ -36,10 +36,8 @@
     var xml = new JKL.ParseXML( url );
     var data = xml.parse();
     for(var i=0;i<10;i++){
-    	$("#demo").append("<tr><td>"+ data.APAM.registros.registro[i].id + "</td><td>" + data.APAM.registros.registro[i].planta + "</td><td>" + data.APAM.registros.registro[i].temperatura + "</td><td>" + data.APAM.registros.registro[i].humedad-aire + "</td><td>" + data.APAM.registros.registro[i].humedad-tierra + "</td><td>" + data.APAM.registros.registro[i].luminosidad +"</td></tr>");
+    	$("#demo").append("<tr><td>"+ data.APAM.registros.registro[i].id + "</td><td>" + data.APAM.registros.registro[i].planta + "</td><td>" + data.APAM.registros.registro[i].temperatura + "</td><td>" + data.APAM.registros.registro[i].humedad_aire + "</td><td>" + data.APAM.registros.registro[i].humedad_tierra + "</td><td>" + data.APAM.registros.registro[i].luminosidad +"</td></tr>");
     }
-
-    $("#demo").append("<td>"+ data.APAM.registros.registro[0].planta + "</td>");
     </script>
 </body>
 </html>
