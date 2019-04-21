@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div class="container">
+		<h1>Registros</h1>
 		<table class="table">
 			<thead>
 				<tr>
@@ -23,7 +24,26 @@
 					<th>Luminosidad</th>
 				</tr>
 			</thead> 
-			<tbody onload="loadXMLDoc()" id="demo">
+			<tbody id="registros">
+			</tbody>
+		</table>
+		<h1>Plantas</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>nombre</th>
+					<th>Temperatura Mín</th>
+					<th>Temperatura Máx</th>
+					<th>Humedad aire Mín</th>
+					<th>Humedad aire Max</th>
+					<th>Humedad tierra Mín</th>
+					<th>Humedad tierra Max</th>
+					<th>Luminosidad Mín</th>
+					<th>Luminosidad Max</th>
+				</tr>
+			</thead> 
+			<tbody id="demo">
 			</tbody>
 		</table>
 	</div>
@@ -35,8 +55,11 @@
     var url = "datos.xml";
     var xml = new JKL.ParseXML( url );
     var data = xml.parse();
-    for(var i=0;i<10;i++){
+    for(var i=0;i<12;i++){
     	$("#demo").append("<tr><td>"+ data.APAM.registros.registro[i].id + "</td><td>" + data.APAM.registros.registro[i].planta + "</td><td>" + data.APAM.registros.registro[i].temperatura + "</td><td>" + data.APAM.registros.registro[i].humedad_aire + "</td><td>" + data.APAM.registros.registro[i].humedad_tierra + "</td><td>" + data.APAM.registros.registro[i].luminosidad +"</td></tr>");
+    }
+    for(var i=0;i<4;i++){
+    	$("#demo").append("<tr><td>"+ data.APAM.plantas.planta[i].id + "</td><td>" + data.APAM.plantas.planta[i].nombre + "</td><td>" + data.APAM.plantas.planta[i].temperatura_opt.min + "</td><td>" + data.APAM.plantas.planta[i].temperatura_opt.max + "</td><td>" + data.APAM.plantas.planta[i].humedad_aire_opt.min + "</td><td>" + data.APAM.plantas.planta[i].humedad_aire_opt.max + "</td><td>" + data.APAM.plantas.planta[i].humedad_tierra_opt.min + "</td><td>" + data.APAM.plantas.planta[i].humedad_tierra_opt.max + "</td><td>" + data.APAM.plantas.planta[i].luminosidad_opt.min + "</td><td>" + data.APAM.plantas.planta[i].luminosidad_opt.max + "</td></tr>");
     }
     </script>
 </body>
