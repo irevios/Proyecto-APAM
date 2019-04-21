@@ -57,7 +57,7 @@
     var archivo = "datos.xml";
     var xml = new JKL.ParseXML(archivo);
     var datos = xml.parse();
-    for(var i=0;i<Object.keys(datos.APAM.registros).length;i++){
+    for(var i=0;i<Object.entries(datos.APAM.registros).length;i++){
     	$("#registros").append("<tr><td>"+ datos.APAM.registros.registro[i].id + "</td><td>" + datos.APAM.registros.registro[i].planta + "</td><td>" + datos.APAM.registros.registro[i].temperatura + "</td><td>" + datos.APAM.registros.registro[i].humedad_aire + "</td><td>" + datos.APAM.registros.registro[i].humedad_tierra + "</td><td>" + datos.APAM.registros.registro[i].luminosidad +"</td></tr>");
     }
     for(var i=0;i<4;i++){
