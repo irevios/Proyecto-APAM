@@ -35,7 +35,8 @@
     var url = "datos.xml";
     var xml = new JKL.ParseXML( url );
     var data = xml.parse();
-    $("#demo").append("<td>"+ data.APAM.registros.registro[1].fecha + "</td>");
+    $("#demo").append("<td>"+ data.APAM.registros.registro[1].planta + "</td>");
+    $("#demo").append("<td>"+ data.APAM.registros.registro["r04"].planta + "</td>");
     </script>
 </body>
 </html>
