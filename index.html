@@ -33,9 +33,10 @@
 	<script type="text/javascript" src="jkl-parsexml.js"></script>
 	<script>
     var url = "datos.xml";
-    var xml = new JKL.ParseXML( url );
-    var data = xml.parse();
-    $("#demo").append("<td>"+ data.APAM.plantas.planta[id="P01"].emocion.getAttribute('cantidad') + "</td>");
+    xmlDoc = $.parseXML( xml ),
+	$xml = $( xmlDoc ),
+	$title = $xml.find( "planta" );
+    $("#demo").append("<td>"+ $title.text() + "</td>");
     </script>
 </body>
 </html>
