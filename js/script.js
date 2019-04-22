@@ -50,7 +50,7 @@ $(function cambiarPorcentajes(){
     var datos = xml.parse();
     var temperatura = 0;
 
-    for(var i=0;i<Object.keys(datos.APAM.registros.registro).length;i++){
+    for(var i=0;i<Object.keys(datos.APAM.registros.registro).length && temperatura ==0;i++){
     	if(datos.APAM.registros.registro[i].planta === datos.APAM.plantas.planta[0].id){
     		temperatura = datos.APAM.registros.registro[i].temperatura;		
     	}
