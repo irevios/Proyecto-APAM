@@ -52,7 +52,7 @@ $(function cambiarPorcentajes(){
 
     for(var i=0;i<Object.keys(datos.APAM.registros.registro).length;i++){
     	if(datos.APAM.registros.registro[i].planta === datos.APAM.plantas.planta[0].id){
-    		temperatura = datos.APAM.registros[i].temperatura;		
+    		temperatura = datos.APAM.registros.registro[i].temperatura;		
     	}
     }
     $(".temp span").val(temperatura+"ºC");
