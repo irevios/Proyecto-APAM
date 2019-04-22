@@ -44,7 +44,6 @@ function giramenu(grados,planta){
 	cambiarPorcentajes(planta);
 }
 
-
 function cambiarPorcentajes(planta){
 	var archivo = "xml/datos.xml";
     var xml = new JKL.ParseXML(archivo);
@@ -63,11 +62,11 @@ function cambiarPorcentajes(planta){
     	}
     }
     $(".temp span").html(temperatura+"ºC");
-    $("#statcirculosvg").css("--porcentajetempe",parseInt(temperatura));
+    $(":root").css("--porcentajetempe",parseInt(temperatura));
     $(".humaire span").html(humaire+"%");
-    $("#statcirculosvg").css("--porcentajehumai",parseInt(humaire));
+    $(":root").css("--porcentajehumai",parseInt(humaire));
     $(".humagua span").html(humtierra+"%");
-    $("#statcirculosvg").css("--porcentajehumti",parseInt(humtierra));
+    $(":root").css("--porcentajehumti",parseInt(humtierra));
     $(".luz span").html(luminosidad+"%");
-    $("#statcirculosvg").css("--porcentajelumi",parseInt(luminosidad));
+    $(":root").css("--porcentajelumi",parseInt(luminosidad));
 }
