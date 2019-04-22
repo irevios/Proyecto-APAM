@@ -19,7 +19,7 @@ $(window).resize(function calculaCirculo(){
 	$('body').css('--circulo',ancho+'px');
 });
 
-function giramenu(grados){
+function giramenu(grados,planta){
 	var deg = parseInt(grados);
 	var actual = parseInt($('body').css('--rotacion'));
 	if(actual == -270 && deg == 0){
@@ -41,6 +41,7 @@ function giramenu(grados){
 	}
 
 	$('.menucircular').css('transition','1s');
+	cambiarPorcentajes(planta);
 }
 
 
@@ -69,5 +70,4 @@ function cambiarPorcentajes(planta){
     $("#statcirculosvg").css("--porcentajehumti",humtierra);
     $(".luz span").html(luminosidad+"%");
     $("#statcirculosvg").css("--porcentajelumi",luminosidad);
-
 }
