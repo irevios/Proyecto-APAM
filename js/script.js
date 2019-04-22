@@ -55,5 +55,5 @@ $(function cambiarPorcentajes(){
     		temperatura = datos.APAM.registros[i].temperatura;		
     	}
     }
-    $(".temp span").text("aºC");
+    $(".temp span").val("aºC");
 });
