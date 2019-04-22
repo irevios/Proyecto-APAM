@@ -25,7 +25,7 @@
 							<div class="row align-items-center">
 								<div class="stat">
 									<div class="row align-items-center justify-content-center">
-									<div class="temp col-12" onload="cambiarPorcentajes()">
+									<div class="temp col-12" onload="cambiarPorcentajes(1)">
 										<i class="fa fa-thermometer-empty" aria-hidden="true"></i>
 										<span>31.7ºC</span>
 									</div>
@@ -53,10 +53,10 @@
 							<object data="img/circular.svg" class="menucircular2"></object>
 							<div class="menucircular" onload="calculaCirculo()">
 								<ul>
-									<li id="uno" onclick="giramenu(0)"><div>1</div></li>
-									<li id="dos" onclick="giramenu(90)"><div>2</div></li>
-									<li id="tres" onclick="giramenu(180)"><div>3</div></li>
-									<li id="cuatro" onclick="giramenu(270)"><div>4</div></li>
+									<li id="uno" onclick="giramenu(0) cambiarPorcentajes(1)"><div>1</div></li>
+									<li id="dos" onclick="giramenu(90) cambiarPorcentajes(2)"><div>2</div></li>
+									<li id="tres" onclick="giramenu(180) cambiarPorcentajes(3)"><div>3</div></li>
+									<li id="cuatro" onclick="giramenu(270) cambiarPorcentajes(4)"><div>4</div></li>
 							</div>
 						</div>
 					</div>
