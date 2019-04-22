@@ -56,4 +56,5 @@ $(function cambiarPorcentajes(){
     	}
     }
     $(".temp span").html(temperatura+"ºC");
+    $("#statcirculosvg").css("porcentajetempe",temperatura);
 });
