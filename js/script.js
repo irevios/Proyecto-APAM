@@ -49,12 +49,25 @@ $(function cambiarPorcentajes(){
     var xml = new JKL.ParseXML(archivo);
     var datos = xml.parse();
     var temperatura = 0;
+    var humaire = 0;
+    var humtierra = 0;
+    var luminosidad = 0;
 
-    for(var i=0;i<Object.keys(datos.APAM.registros.registro).length && temperatura ==0;i++){
+    for(var i=0;i<Object.keys(datos.APAM.registros.registro).length && temperatura == 0;i++){
     	if(datos.APAM.registros.registro[i].planta === datos.APAM.plantas.planta[0].id){
-    		temperatura = datos.APAM.registros.registro[i].temperatura;		
+    		temperatura = datos.APAM.registros.registro[i].temperatura;
+    		humaire == datos.APAM.registros.registro[i].humedad_aire;
+    		humtierra == datos.APAM.registros.registro[i].humedad_tierra;
+    		luminosidad == datos.APAM.registros.registro[i].luminosidad;
     	}
     }
     $(".temp span").html(temperatura+"ºC");
-    $("#statcirculosvg").css("porcentajetempe",temperatura);
+    $("#statcirculosvg").css("--porcentajetempe",temperatura);
+    $(".humaire span").html(temperatura+"ºC");
+    $("#statcirculosvg").css("--porcentajehumai",humaire);
+    $(".humagua span").html(temperatura+"ºC");
+    $("#statcirculosvg").css("--porcentajehumti",humtierra);
+    $(".luz span").html(temperatura+"ºC");
+    $("#statcirculosvg").css("--porcentajelumi",luminosidad);
+
 });
