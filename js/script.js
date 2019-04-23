@@ -66,8 +66,8 @@ function cambiarPorcentajes(planta) {
 
     window.onload = function (){
 	    var c = document.getElementById("svg").contentDocument;
-	    var rect = c.getElementById("statcirculosvg");
-	    rect.setAttribute("style", "--porcentajetempe:"+ parseInt(temperatura) + "");
+	    var rect = c.getElementById("lumi");
+	    rect.setAttribute("style", "stroke-dasharray: calc(var(--lumimax) * var("+ parseInt(luminosidad) + ")/100), var(--lumimax) !important;");
     $(rect).css("--porcentajehumai:"+ parseInt(humaire) + "");
     $(rect).css("--porcentajehumti:"+ parseInt(humtierra) + "");
     $(rect).css("--porcentajelumi:"+ parseInt(luminosidad) + "");
