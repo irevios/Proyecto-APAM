@@ -62,11 +62,11 @@ function cambiarPorcentajes(planta){
     	}
     }
     $(".temp span").html(temperatura+"ºC");
-    $(".menucircular2").css("--porcentajetempe",parseInt(temperatura)+"");
+    $("#statcirculosvg").css("--porcentajetempe",parseInt(temperatura)+"");
     $(".humaire span").html(humaire+"%");
-    $(".menucircular2").css("--porcentajehumai",parseInt(humaire)+"");
+    $("#statcirculosvg").css("--porcentajehumai",parseInt(humaire)+"");
     $(".humagua span").html(humtierra+"%");
-    $(".menucircular2").css("--porcentajehumti",parseInt(humtierra)+"");
+    $("#statcirculosvg").css("--porcentajehumti",parseInt(humtierra)+"");
     $(".luz span").html(luminosidad+"%");
-    $(".menucircular2").css("--porcentajelumi",parseInt(luminosidad)+"");
+    $("#statcirculosvg").css("--porcentajelumi",parseInt(luminosidad)+"");
 }
