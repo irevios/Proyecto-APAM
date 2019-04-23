@@ -59,13 +59,12 @@ function cambiarPorcentajes(planta) {
             luminosidad = datos.APAM.registros.registro[i].luminosidad;
         }
     }
-    var svg = document.getElementsByClassName('menucircular2').contentDocument.getElementById('statcirculosvg');
     $(".temp span").html(temperatura + "ºC");
-    $(svg).css("--porcentajetempe", parseInt(temperatura) + "");
+    $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
     $(".humaire span").html(humaire + "%");
-    $(svg).css("--porcentajehumai", parseInt(humaire) + "");
+    $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
     $(".humagua span").html(humtierra + "%");
-    $(svg).css("--porcentajehumti", parseInt(humtierra) + "");
+    $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
     $(".luz span").html(luminosidad + "%");
-    $(svg).css("--porcentajelumi", parseInt(luminosidad) + "");
+    $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
 }
