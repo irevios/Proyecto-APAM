@@ -234,7 +234,7 @@ position: fixed;
   }
 }
 
-.menucircular2{
+#statcirculosvg{
      --humaimax: 350;
      --tempemax: 320;
      --humtimax: 290;
