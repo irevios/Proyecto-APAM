@@ -212,28 +212,6 @@ position: fixed;
         position: absolute;
     }
 }
-
-.circular-chart {
-  display: block;
-  margin: 10px auto;
-  max-width: 80%;
-  max-height: 250px;
-}
-
-.circle {
-  stroke: #4CC790;
-  fill: none;
-  stroke-width: 2.8;
-  stroke-linecap: round;
-  animation: progress 1s ease-out forwards;
-}
-
-@keyframes progress {
-  0% {
-    stroke-dasharray: 0 100;
-  }
-}
-
 #statcirculosvg{
      --humaimax: 350;
      --tempemax: 320;
@@ -246,22 +224,22 @@ position: fixed;
 
 }
 
-#humai{
+path#humai{
     stroke: #44e5b2 !important;
     stroke-dasharray: calc(var(--humaimax) * var(--porcentajehumai)/100), var(--humaimax)!important;
      transition: 1s;
 }
-#tempe{
+path#tempe{
     stroke: #e54343 !important;
     stroke-dasharray: calc(var(--tempemax) * var(--porcentajetempe)/100),var(--tempemax)!important;
      transition: 1s;
 }
-#humti{
+path#humti{
     stroke: #43a6e5 !important;
     stroke-dasharray: calc(var(--humtimax) * var(--porcentajehumti)/100),var(--humtimax)!important;
      transition: 1s;
 }
-#lumi{
+path#lumi{
     stroke: #ffeb6d !important;
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
      transition: 1s;
