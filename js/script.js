@@ -60,11 +60,16 @@ function cambiarPorcentajes(planta) {
         }
     }
     $(".temp span").html(temperatura + "ºC");
-    $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
     $(".humaire span").html(humaire + "%");
-    $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
     $(".humagua span").html(humtierra + "%");
-    $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
     $(".luz span").html(luminosidad + "%");
-    $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
+
+    window.onload = function (){
+	    var c = document.getElementById("svg").contentDocument;
+	    var rect = c.getElementById("statcirculosvg");
+	    $(rect).css("--porcentajetempe", parseInt(temperatura) + "");
+	    $(rect).css("--porcentajehumai", parseInt(humaire) + "");
+	    $(rect).css("--porcentajehumti", parseInt(humtierra) + "");
+	    $(rect).css("--porcentajelumi", parseInt(luminosidad) + "");
+	}
 }
