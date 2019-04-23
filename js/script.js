@@ -68,7 +68,7 @@ function cambiarPorcentajes(planta){
     $(".luz span").html(luminosidad+"%");
 	$("svg").load(function() {
 	   var doc = this.getSVGDocument();
-	   var id = doc.find("#statcirculosvg"); 
+	   var id = doc.getElementById("statcirculosvg"); 
   	  $(id).css("--porcentajetempe",parseInt(temperatura)+"");
       $(id).css("--porcentajehumai",parseInt(humaire)+"");
        $(id).css("--porcentajehumti",parseInt(humtierra)+"");
