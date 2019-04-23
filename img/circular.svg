@@ -14,6 +14,9 @@
    id="statcirculosvg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="circular.svg">
+  <script href="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
+  <script href="../js/jkl-parsexml.js"/>
+  <script href="../js/script.js" />
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -38,24 +41,7 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
-  <metadata
-     id="metadata5">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
   <g
-     inkscape:label="Capa 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(396.55046,118.44962)">
-    <g
        id="g4559">
       <path
          inkscape:connector-curvature="0"
@@ -118,5 +104,4 @@
          sodipodi:open="true"
          d="m -360.97128,-1.6016048 a 81.257385,81.257385 0 0 1 40.89949,-70.5266102 81.257385,81.257385 0 0 1 81.52638,0.470078 81.257385,81.257385 0 0 1 40.08349,70.99355573" />
     </g>
-  </g>
 </svg>
