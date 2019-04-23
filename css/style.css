@@ -239,10 +239,10 @@ position: fixed;
      --tempemax: 320;
      --humtimax: 290;
      --lumimax: 260;
-     --porcentajehumai: 62;
-     --porcentajetempe: 80;
-     --porcentajehumti: 27;
-     --porcentajelumi: 42;
+     --porcentajehumai: 0;
+     --porcentajetempe: 0;
+     --porcentajehumti: 0;
+     --porcentajelumi: 0;
 }
 
 #humai{
