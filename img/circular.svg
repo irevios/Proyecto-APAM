@@ -17,11 +17,6 @@
   <script href="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
   <script href="../js/jkl-parsexml.js"/>
   <script href="../js/script.js" />
-  <script type="text/javascript">
-    // <![CDATA[
-    getData();
-   // ]]>
-  </script>
   <defs
      id="defs2" />
   <sodipodi:namedview
