@@ -16,13 +16,12 @@ class SvgImage extends React.Component {
     };
   }
   render() {
-    return (<div dangerouslySetInnerHTML={this.createInnerHtml()}>
-            </div>);
+    return ("<div dangerouslySetInnerHTML="+{this.createInnerHtml()}+"></div>");
   }
 }
 
 class Widget extends React.Component {
   render() {
-    return (<SvgImage url='https://cdn.css-tricks.com/wp-content/uploads/2015/05/kiwi.svg'></SvgImage>);
+    return ("<SvgImage url='img/circular.svg'></SvgImage>");
   }
 }
