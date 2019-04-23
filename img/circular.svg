@@ -14,9 +14,6 @@
    id="statcirculosvg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="circular.svg">
-  <script href="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
-  <script href="../js/jkl-parsexml.js"/>
-  <script href="../js/script.js" />
   <defs
      id="defs2" />
   <sodipodi:namedview
