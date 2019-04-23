@@ -59,7 +59,7 @@ function cambiarPorcentajes(planta) {
             luminosidad = datos.APAM.registros.registro[i].luminosidad;
         }
     }
-    var svg = document.getElementById('.menucircular2').contentDocument.getElementById('#statcirculosvg');
+    var svg = document.getElementsByClassName('menucircular2').contentDocument.getElementById('statcirculosvg');
     $(".temp span").html(temperatura + "ºC");
     $(svg).css("--porcentajetempe", parseInt(temperatura) + "");
     $(".humaire span").html(humaire + "%");
