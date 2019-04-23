@@ -243,6 +243,7 @@ position: fixed;
      --porcentajetempe: 0;
      --porcentajehumti: 0;
      --porcentajelumi: 0;
+     transition: 1s;
 }
 
 #humai{
