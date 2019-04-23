@@ -59,39 +59,13 @@ function cambiarPorcentajes(planta) {
             luminosidad = datos.APAM.registros.registro[i].luminosidad;
         }
     }
+    var svg = document.getElementById('.menucircular2').contentDocument.getElementById('#statcirculosvg');
     $(".temp span").html(temperatura + "ºC");
-    $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
+    $(svg).css("--porcentajetempe", parseInt(temperatura) + "");
     $(".humaire span").html(humaire + "%");
-    $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
+    $(svg).css("--porcentajehumai", parseInt(humaire) + "");
     $(".humagua span").html(humtierra + "%");
-    $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
+    $(svg).css("--porcentajehumti", parseInt(humtierra) + "");
     $(".luz span").html(luminosidad + "%");
-    $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
-}
-
-function getData(){
-	var archivo = "xml/datos.xml";
-    var xml = new JKL.ParseXML(archivo);
-    var datos = xml.parse();
-    var temperatura = 0;
-    var humaire = 0;
-    var humtierra = 0;
-    var luminosidad = 0;
-
-    for (var i = 0; i < Object.keys(datos.APAM.registros.registro).length && temperatura == 0; i++) {
-        if (datos.APAM.registros.registro[i].planta === datos.APAM.plantas.planta[3].id) {
-            temperatura = datos.APAM.registros.registro[i].temperatura;
-            humaire = datos.APAM.registros.registro[i].humedad_aire;
-            humtierra = datos.APAM.registros.registro[i].humedad_tierra;
-            luminosidad = datos.APAM.registros.registro[i].luminosidad;
-        }
-    }
-    $(".temp span").html(temperatura + "ºC");
-    $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
-    $(".humaire span").html(humaire + "%");
-    $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
-    $(".humagua span").html(humtierra + "%");
-    $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
-    $(".luz span").html(luminosidad + "%");
-    $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
+    $(svg).css("--porcentajelumi", parseInt(luminosidad) + "");
 }
