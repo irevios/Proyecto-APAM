@@ -8,7 +8,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-	<script type="text/javascript" src="js/svgImage.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -51,7 +50,7 @@
 					</div>
 					<div class="row statsradial fixed-bottom justify-content-center">
 						<div class="col-8">
-							<SvgImage url="img/circular.svg" class="menucircular2"></SvgImage>
+							<object data="img/circular.svg" id="svg" class="menucircular2"></object>
 							<div class="menucircular" onload="calculaCirculo()">
 								<ul>
 									<li id="uno" onclick="giramenu(0,1)"><div>1</div></li>
