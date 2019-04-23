@@ -243,22 +243,26 @@ position: fixed;
      --porcentajetempe: 0;
      --porcentajehumti: 0;
      --porcentajelumi: 0;
-     transition: 1s;
+
 }
 
 #humai{
     stroke: #44e5b2 !important;
     stroke-dasharray: calc(var(--humaimax) * var(--porcentajehumai)/100), var(--humaimax)!important;
+     transition: 1s;
 }
 #tempe{
     stroke: #e54343 !important;
     stroke-dasharray: calc(var(--tempemax) * var(--porcentajetempe)/100),var(--tempemax)!important;
+     transition: 1s;
 }
 #humti{
     stroke: #43a6e5 !important;
     stroke-dasharray: calc(var(--humtimax) * var(--porcentajehumti)/100),var(--humtimax)!important;
+     transition: 1s;
 }
 #lumi{
     stroke: #ffeb6d !important;
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
+     transition: 1s;
 }
