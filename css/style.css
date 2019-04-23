@@ -1,13 +1,3 @@
-:root{
-     --humaimax: 350;
-     --tempemax: 320;
-     --humtimax: 290;
-     --lumimax: 260;
-     --porcentajehumai: 62;
-     --porcentajetempe: 80;
-     --porcentajehumti: 27;
-     --porcentajelumi: 42;
-}
 body{
     overflow: hidden;
     font-family: Roboto;
@@ -244,6 +234,16 @@ position: fixed;
   }
 }
 
+#statcirculosvg{
+     --humaimax: 350;
+     --tempemax: 320;
+     --humtimax: 290;
+     --lumimax: 260;
+     --porcentajehumai: 62;
+     --porcentajetempe: 80;
+     --porcentajehumti: 27;
+     --porcentajelumi: 42;
+}
 
 #humai{
     stroke: #44e5b2 !important;
