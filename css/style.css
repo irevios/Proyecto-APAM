@@ -21,6 +21,11 @@ body{
     background-repeat:no-repeat;
     background-size: cover;
 }
+.tierra > svg{
+    height: 100%;
+    width: 100vw;
+    max-width:100%;
+}
 
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
 	border: 1px solid black;
@@ -34,21 +39,22 @@ body{
     background-color: white;
     display: block;
     border-radius: 4px;
-    margin-left: auto;
+    margin-left: 30%;
     margin-right: 0;
-    width: calc(var(--circulo)/3);
-    height: calc(var(--circulo)/3);
+    width: auto;
+    height: auto;
     text-align: center;
 }
 .stat > .row{
     height: 100%;
+    padding: 1em;
 }
 .stat i{
-    font-size: calc(var(--circulo)/25);
+    font-size: 1.2em;
     padding-right: calc(var(--circulo)/25);
 }
 .stat span{
-    font-size: calc(var(--circulo)/30);
+    font-size: 1.2em;
 }
 .stat:before{
     content: "";
@@ -243,4 +249,21 @@ path#lumi{
     stroke: #ffeb6d !important;
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
      transition: 1s;
+}
+
+path#humaibg{
+    stroke: #44e5b2 !important;
+}
+path#tempebg{
+    stroke: #e54343 !important;
+}
+path#humtibg{
+    stroke: #43a6e5 !important;
+}
+path#lumibg{
+    stroke: #ffeb6d !important;
+}
+
+svg > *{
+    border:3em solid #000000;
 }
