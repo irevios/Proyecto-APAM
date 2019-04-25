@@ -61,7 +61,7 @@ function cambiarPorcentajes(planta) {
         }
     }
     $(".temp span").html(temperatura + "ºC");
-    $("#statcirculosvg").css("--porcentajetempe", 0 + "");
+    $("#statcirculosvg").css("--porcentajetempe", 0 + "").delay(1);
     $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
     $(".humaire span").html(humaire + "%");
     $("#statcirculosvg").css("--porcentajehumai", 0 + "");
