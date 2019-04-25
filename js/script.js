@@ -5,6 +5,7 @@ $(function fondo() {
     var giro = Math.round((time) * -1);
     $('.hora').css('animation-delay', giro + 's');
     $('.hora').css('-webkit-animation-delay', giro + 's');
+    cambiarPorcentajes(1);
 });
 
 
