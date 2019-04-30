@@ -17,13 +17,13 @@ body{
 	height: 32%;
 	z-index: 2 !important;
     background: rgba(95,64,53,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(95,64,53,1)), color-stop(54%, rgba(78,47,44,1)), color-stop(100%, rgba(88,66,60,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f4035', endColorstr='#58423c', GradientType=1 );
+    background: -moz-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(95,64,53,1)), color-stop(34%, rgba(79,54,46,1)), color-stop(91%, rgba(78,47,44,1)), color-stop(100%, rgba(78,47,44,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f4035', endColorstr='#4e2f2c', GradientType=1 );
 }
 
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
@@ -31,10 +31,10 @@ body{
     }*/
 
     .stats, .emocion, .planta, .statsradial > div, .stats > .row{
-       height: 100%;
-   }
+     height: 100%;
+ }
 
-   .stat{
+ .stat{
     background-color: white;
     display: block;
     border-radius: 4px;
@@ -218,14 +218,14 @@ body{
     }
 }
 #statcirculosvg{
-   --humaimax: 350;
-   --tempemax: 320;
-   --humtimax: 290;
-   --lumimax: 260;
-   --porcentajehumai: 0;
-   --porcentajetempe: 0;
-   --porcentajehumti: 0;
-   --porcentajelumi: 0;
+ --humaimax: 350;
+ --tempemax: 320;
+ --humtimax: 290;
+ --lumimax: 260;
+ --porcentajehumai: 0;
+ --porcentajetempe: 0;
+ --porcentajehumti: 0;
+ --porcentajelumi: 0;
 
 }
 
