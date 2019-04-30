@@ -1,8 +1,8 @@
 body{
     overflow: hidden;
     font-family: Roboto;
-     --circulo: 0;
-     --rotacion:0deg;
+    --circulo: 0;
+    --rotacion:0deg;
 }
 .container-fluid{
 	height: 100vh;
@@ -14,27 +14,27 @@ body{
 }
 
 .tierra{
-	height: 40%;
+	height: 32%;
 	z-index: 2 !important;
-    background-color: #311f1f;
-    background-repeat:no-repeat;
-    background-size: cover;
-}
-.tierra > svg{
-    height: 100%;
-    width: 100vw;
-    max-width:100%;
+    background: rgba(95,64,53,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(95,64,53,1)), color-stop(54%, rgba(78,47,44,1)), color-stop(100%, rgba(88,66,60,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(95,64,53,1) 0%, rgba(78,47,44,1) 54%, rgba(88,66,60,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f4035', endColorstr='#58423c', GradientType=1 );
 }
 
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
 	border: 1px solid black;
-}*/
+    }*/
 
-.stats, .emocion, .planta, .statsradial > div, .stats > .row{
-	height: 100%;
-}
+    .stats, .emocion, .planta, .statsradial > div, .stats > .row{
+       height: 100%;
+   }
 
-.stat{
+   .stat{
     background-color: white;
     display: block;
     border-radius: 4px;
@@ -78,7 +78,7 @@ body{
 
 /* Fondo cielo */
 .cielo{
-position: fixed;
+    position: fixed;
     top: 0;
     margin-top: calc(8000px / -4);
     height: 8000px;
@@ -124,7 +124,7 @@ position: fixed;
 }
 .hora{
     animation-delay: -40000s; 
-  	-webkit-animation-delay: -40000s;
+    -webkit-animation-delay: -40000s;
 }
 
 /* Menú y stats radial*/
@@ -218,14 +218,14 @@ position: fixed;
     }
 }
 #statcirculosvg{
-     --humaimax: 350;
-     --tempemax: 320;
-     --humtimax: 290;
-     --lumimax: 260;
-     --porcentajehumai: 0;
-     --porcentajetempe: 0;
-     --porcentajehumti: 0;
-     --porcentajelumi: 0;
+   --humaimax: 350;
+   --tempemax: 320;
+   --humtimax: 290;
+   --lumimax: 260;
+   --porcentajehumai: 0;
+   --porcentajetempe: 0;
+   --porcentajehumti: 0;
+   --porcentajelumi: 0;
 
 }
 
@@ -237,17 +237,17 @@ path#humai{
 path#tempe{
     stroke: #e54343 !important;
     stroke-dasharray: calc(var(--tempemax) * var(--porcentajetempe)/100),var(--tempemax)!important;
-     transition: 1s;
+    transition: 1s;
 }
 path#humti{
     stroke: #43a6e5 !important;
     stroke-dasharray: calc(var(--humtimax) * var(--porcentajehumti)/100),var(--humtimax)!important;
-     transition: 1s;
+    transition: 1s;
 }
 path#lumi{
     stroke: #ffeb6d !important;
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
-     transition: 1s;
+    transition: 1s;
 }
 
 path#humaibg{
@@ -262,4 +262,3 @@ path#humtibg{
 path#lumibg{
     stroke: #ffeb6d !important;
 }
-
