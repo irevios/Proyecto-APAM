@@ -554,7 +554,7 @@ JKL.ParseXML.HTTP.prototype.load = function() {
     // open for XMLHTTPRequest (not for IXMLDOMElement)
     if ( typeof(this.req.send) != "undefined" ) {
         // debug.print( "open( '"+this.method+"', '"+this.url+"', "+async_flag+" );" );
-        this.req.open( this.method, this.url, async_flag );
+        this.req.open( this.method, this.url, true );
     }
 
 //  // If-Modified-Since: Thu, 01 Jun 1970 00:00:00 GMT
