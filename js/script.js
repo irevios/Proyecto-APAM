@@ -15,10 +15,6 @@ $(function calculaCirculo() {
     $('body').css('--circulo', ancho + 'px');
 });
 
-$(window).resize(function calculaCirculo() {
-    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    $('body').css('--circulo', ancho + 'px');
-});
 
 function giramenu(grados, planta) {
     var deg = parseInt(grados);
