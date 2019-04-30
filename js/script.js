@@ -67,10 +67,10 @@ function cambiarPorcentajes(planta) {
     $("#statcirculosvg").css("--porcentajehumai", 0 + "");
     $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
     $(".humagua span").html(humtierra + "%");
-    $("#statcirculosvg").css("--porcentajehumti", 0 + ""); 
-    setTimeout(function() {
-          $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
+     setTimeout(function() {
+         $("#statcirculosvg").css("--porcentajehumti", 0 + "");
      },1000);
+    $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
     $(".luz span").html(luminosidad + "%");
     $("#statcirculosvg").css("--porcentajelumi", 0 + "");
     $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
