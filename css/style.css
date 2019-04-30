@@ -16,7 +16,6 @@ body{
 .tierra{
 	height: 40%;
 	z-index: 2 !important;
-    /*background-image: url("https://ak0.picdn.net/shutterstock/videos/10125770/thumb/1.jpg");*/
     background-color: #311f1f;
     background-repeat:no-repeat;
     background-size: cover;
@@ -233,7 +232,7 @@ position: fixed;
 path#humai{
     stroke: #44e5b2 !important;
     stroke-dasharray: calc(var(--humaimax) * var(--porcentajehumai)/100), var(--humaimax)!important;
-     transition: 1s;
+    transition: 1s;
 }
 path#tempe{
     stroke: #e54343 !important;
