@@ -8,6 +8,10 @@ $(function fondo() {
     cambiarPorcentajes(1);
 });
 
+$(window).resize(function calculaCirculo() {
+    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
+    $('body').css('--circulo', ancho + 'px');
+});
 
 // Menú circular
 $(function calculaCirculo() {
