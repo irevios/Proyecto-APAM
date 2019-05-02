@@ -80,7 +80,7 @@ function giramenu(grados, planta) {
 function cambiarPorcentajes(planta) {
     $.ajax({
         type: "GET",
-        url: "xml/datos.xml",
+        url: "https://apamiv.netlify.com/xml/datos.xml",
         cache: false,
         dataType: "xml",
         success: function(xml) {
