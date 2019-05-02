@@ -108,9 +108,9 @@ function cambiarPorcentajes(planta) {
                //}
             //}
             $(".temp span").html(temperatura + "ºC");
-            // $(".humaire span").html(humaire + "%");
-            // $(".humagua span").html(humtierra + "%");
-            // $(".luz span").html(luminosidad + "%");
+            $(".humaire span").html(humaire + "%");
+            $(".humagua span").html(humtierra + "%");
+            $(".luz span").html(luminosidad + "%");
             // $("#statcirculosvg").css("--porcentajetempe", 0 + "");
             // $("#statcirculosvg").css("--porcentajehumai", 0 + "");
             // $("#statcirculosvg").css("--porcentajehumti", 0 + "");
