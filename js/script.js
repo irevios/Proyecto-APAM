@@ -89,12 +89,12 @@ function cambiarPorcentajes(planta) {
             var humtierra = 0;
             var luminosidad = 0;
 
-             for (var i = 0; i < $(xmlParse).find('registro').length && temperatura == 0; i++) {
-                if ( ($(xmlParse).find('registro:eq(i)').find("planta").text()) == ($(xmlParse).find(planta).find("id").text()) ) {
-                    temperatura = $(xmlParse).find('registro:eq(i)').find("temperatura").text();
-                    humaire = $(xmlParse).find('registro:eq(i)').find("humedad_aire").text();
-                    humtierra = $(xmlParse).find('registro:eq(i)').find("humedad_tierra").text();
-                    luminosidad = $(xmlParse).find('registro:eq(i)').find("luminosidad").text();
+             for (var i = 0; i < $(xml).find('registro').length && temperatura == 0; i++) {
+                if ( ($(xml).find('registro:eq(i)').find("planta").text()) == ($(xml).find(planta).find("id").text()) ) {
+                    temperatura = $(xml).find('registro:eq(i)').find("temperatura").text();
+                    humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
+                    humtierra = $(xml).find('registro:eq(i)').find("humedad_tierra").text();
+                    luminosidad = $(xml).find('registro:eq(i)').find("luminosidad").text();
                 }
             }
             $(".temp span").html(temperatura + "ºC");
