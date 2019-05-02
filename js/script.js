@@ -93,7 +93,7 @@ function cambiarPorcentajes(planta) {
              //    if ( ($(xml).find('registro:eq('i')').find("planta").text()) == ($(xml).find(planta).find("id").text()) ) {
                      $(xml).find("registro:eq(0)").each(function(){
                         //if( == $(this).attr("planta")){
-                            temperatura = $(this).find("planta:eq("+(planta-1)+")").attr("id");
+                            temperatura = $(this).find("planta:eq("+(planta)+")").attr("id");
                         //}
                     });
                     // humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
