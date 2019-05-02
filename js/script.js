@@ -76,15 +76,20 @@ function giramenu(grados, planta) {
 //     },1000);
 
 // }
+
 function cambiarPorcentajes(planta) {
-    $.get("xml/datos.xml",
-        function(xml) {
+    $.ajax({
+        type: "GET",
+        url: "xml/datos.xml",
+        cache: false,
+        dataType: "xml",
+        success: function(xml) {
             var temperatura = 0;
             var humaire = 0;
             var humtierra = 0;
             var luminosidad = 0;
 
-            for (var i = 0; i < $(xmlParse).find('registro').length && temperatura == 0; i++) {
+             for (var i = 0; i < $(xmlParse).find('registro').length && temperatura == 0; i++) {
                 if ( ($(xmlParse).find('registro:eq(i)').find("planta").text()) == ($(xmlParse).find(planta).find("id").text()) ) {
                     temperatura = $(xmlParse).find('registro:eq(i)').find("temperatura").text();
                     humaire = $(xmlParse).find('registro:eq(i)').find("humedad_aire").text();
@@ -107,7 +112,7 @@ function cambiarPorcentajes(planta) {
                 $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
             },1000);
         }
-    );
+    });
 
 
 }
