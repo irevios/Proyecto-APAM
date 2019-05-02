@@ -88,11 +88,11 @@ function cambiarPorcentajes(planta) {
             var humaire = 0;
             var humtierra = 0;
             var luminosidad = 0;
-
+            var id;
              // for (var i = 0; i < $(xml).find('registro').length && temperatura == 0; i++) {
              //    if ( ($(xml).find('registro:eq('i')').find("planta").text()) == ($(xml).find(planta).find("id").text()) ) {
                     $(xml).find("planta:eq("+(planta-1)+")").each(function(){
-                         var id = $(this).attr("id");
+                         id = $(this).attr("id");
                     });
                      $(xml).find("registro:eq(0)").each(function(){
                        if($(this).attr("planta") == id){
