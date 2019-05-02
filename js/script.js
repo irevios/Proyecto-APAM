@@ -94,7 +94,7 @@ function cambiarPorcentajes(planta) {
                      $(xml).find("registro:eq(0)").each(function(){
                         //if( == $(this).attr("planta")){
                             temperatura = $(this).find("planta:eq("+(planta-1)+")").attr("id");
-                        }
+                        //}
                     });
                     // humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
                     // humtierra = $(xml).find('registro:eq(i)').find("humedad_tierra").text();
