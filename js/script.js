@@ -94,7 +94,8 @@ function cambiarPorcentajes(planta) {
                     $(xml).find("planta:eq("+(planta-1)+")").each(function(){
                          id = $(this).attr("id");
                     });
-                     $(xml).find("registro:eq(0)").each(function(){
+                    for (var i = 0; i < 12 && temperatura == 0; i++) {
+                     $(xml).find("registro:eq("+i+")").each(function(){
                        if($(this).attr("planta") == id){
                             temperatura = $(this).find("temperatura").text();
                             humaire = $(this).find("humedad_aire").text();
@@ -102,6 +103,7 @@ function cambiarPorcentajes(planta) {
                             luminosidad = $(this).find("luminosidad").text();
                         }
                     });
+                 }
                     // humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
                     // humtierra = $(xml).find('registro:eq(i)').find("humedad_tierra").text();
                     // luminosidad = $(xml).find('registro:eq(i)').find("luminosidad").text();
