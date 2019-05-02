@@ -95,7 +95,7 @@ function cambiarPorcentajes(planta) {
                          var id = $(this).attr("id");
                     });
                      $(xml).find("registro:eq(0)").each(function(){
-                       if(this.attr("planta") == id){
+                       if($(this).attr("planta") == id){
                         temperatura = "ok";
                         }
                     });
