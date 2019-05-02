@@ -91,7 +91,9 @@ function cambiarPorcentajes(planta) {
 
              // for (var i = 0; i < $(xml).find('registro').length && temperatura == 0; i++) {
              //    if ( ($(xml).find('registro:eq(i)').find("planta").text()) == ($(xml).find(planta).find("id").text()) ) {
-                    temperatura = $(xml).find("temperatura").text();
+                     $(xml).find("temperatura").each(function(){
+                        temperatura = $(this).text();
+                    }
                     // humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
                     // humtierra = $(xml).find('registro:eq(i)').find("humedad_tierra").text();
                     // luminosidad = $(xml).find('registro:eq(i)').find("luminosidad").text();
