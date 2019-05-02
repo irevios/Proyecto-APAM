@@ -91,12 +91,13 @@ function cambiarPorcentajes(planta) {
 
              // for (var i = 0; i < $(xml).find('registro').length && temperatura == 0; i++) {
              //    if ( ($(xml).find('registro:eq('i')').find("planta").text()) == ($(xml).find(planta).find("id").text()) ) {
+                    $(xml).find("planta:eq("+(planta-1)+")").each(function(){
+                         var id = $(this).attr("id");
+                    });
                      $(xml).find("registro:eq(0)").each(function(){
-                        $(xml).find("planta:eq("+(planta-1)+")").each(function(){
-                        //if( == $(this).attr("planta")){
-                            temperatura = $(this).attr("id");
-                        });
-                        //}
+                       if(this.attr("planta") == id){
+                        temperatura = "ok";
+                        }
                     });
                     // humaire = $(xml).find('registro:eq(i)').find("humedad_aire").text();
                     // humtierra = $(xml).find('registro:eq(i)').find("humedad_tierra").text();
