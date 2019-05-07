@@ -1,16 +1,19 @@
+:root{
+    --circulo: 0;
+    --rotacion:0deg
+}
+
 body{
     overflow: hidden;
-    font-family: Roboto;
-    --circulo: 0;
-    --rotacion:0deg;
+    font-family: Roboto
 }
 .container-fluid{
-	height: 100vh;
+	height: 100vh
 }
 
 .principal{
 	height: 100vh;
-	z-index: 1;
+	z-index: 1
 }
 
 .tierra{
@@ -30,8 +33,8 @@ body{
 	border: 1px solid black;
     }*/
 
-    .stats, .emocion, .planta, .statsradial > div, .stats > .row{
-     height: 100%;
+ .stats, .emocion, .planta, .statsradial > div, .stats > .row{
+     height: 100%
  }
 
  .stat{
@@ -42,18 +45,18 @@ body{
     margin-right: 0;
     width: auto;
     height: auto;
-    text-align: center;
+    text-align: center
 }
 .stat > .row{
     height: 100%;
-    padding: 1em;
+    padding: 1em
 }
 .stat i{
     font-size: 1.2em;
-    padding-right: calc(var(--circulo)/25);
+    padding-right: calc(var(--circulo)/25)
 }
 .stat span{
-    font-size: 1.2em;
+    font-size: 1.2em
 }
 .stat:before{
     content: "";
@@ -66,14 +69,14 @@ body{
     right: calc(var(--circulo)/-40);
     top: 48%;
     transform: rotate(45deg);
-    bottom: auto;
+    bottom: auto
 }
 .temp,.luz,.humaire,.humagua{
     font-size: 0.8em;
-    height: calc(7em / 3.5);
+    height: calc(7em / 3.5)
 }
 .centro{
-	height: 70%;
+	height: 70%
 }
 
 /* Fondo cielo */
@@ -100,7 +103,7 @@ body{
     animation-duration: 86400s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    background-color: lightblue;
+    background-color: lightblue
 }
 @-ms-keyframes spin {
     from { -ms-transform: rotate(0deg); }
@@ -124,19 +127,19 @@ body{
 }
 .hora{
     animation-delay: -40000s; 
-    -webkit-animation-delay: -40000s;
+    -webkit-animation-delay: -40000s
 }
 
 /* Menú y stats radial*/
 .statsradial{
-	height: 30%;
+	height: 30%
 }
 .statsradial > .col-8{
     flex: 0 0 var(--circulo);
     padding: 0;
     height: 100%;
     width: var(--circulo);
-    max-width: var(--circulo);
+    max-width: var(--circulo)
 }
 
 /* Menú circular*/
@@ -144,20 +147,20 @@ body{
     width: var(--circulo);
     height: 200%;
     border-radius: 50%;
-    transform: rotate(var(--rotacion));
+    transform: rotate(var(--rotacion))
 }
 .menucircular2{
     width: var(--circulo);
     height: auto;
     border-radius: 50%;
-    position: absolute;
+    position: absolute
 }
 .menucircular li {
     list-style: none;
     display: block;
     height: calc(var(--circulo)/4.5);
     width: calc(var(--circulo)/4.5);
-    position: absolute;  
+    position: absolute 
 }
 .menucircular li > div{
     background: white;
@@ -165,10 +168,10 @@ body{
     height: calc(var(--circulo)/4.5);   
     width: calc(var(--circulo)/4.5);
     margin-top: 95%;
-    box-shadow: 0px 0px 1em #0000007a;
+    box-shadow: 0px 0px 1em #0000007a
 }
 .menucircular li .altura{
-    padding-bottom: calc(var(--circulo));
+    padding-bottom: calc(var(--circulo))
 }
 .menucircular #uno{
     top: 0;
@@ -176,7 +179,7 @@ body{
     left: 0;
     right: 0;
     margin: 0 auto;
-    transform: rotate(calc((360/4)*4deg));
+    transform: rotate(calc((360/4)*4deg))
 }
 .menucircular #dos{
     top: 0;
@@ -184,7 +187,7 @@ body{
     left: auto;
     right: 0;
     margin: auto 0;
-    transform: rotate(calc((360/4)*1deg));
+    transform: rotate(calc((360/4)*1deg))
 }
 .menucircular #tres{
     top: auto;
@@ -192,7 +195,7 @@ body{
     left: 0;
     right: 0;
     margin: 0 auto;
-    transform: rotate(calc((360/4)*2deg));
+    transform: rotate(calc((360/4)*2deg))
 }
 .menucircular #cuatro{
     top: 0;
@@ -200,21 +203,21 @@ body{
     left: 0;
     right: auto;
     margin: auto 0;
-    transform: rotate(calc((360/4)*3deg));
+    transform: rotate(calc((360/4)*3deg))
 }
 
 @media (max-width:600px){
     .statsradial > .col-8{
         height: 90%;
         bottom: 0;
-        position: absolute;
+        position: absolute
     }
 }
 @media (max-width:400px){
     .statsradial > .col-8{
         height: 70%;
         bottom: 0;
-        position: absolute;
+        position: absolute
     }
 }
 #statcirculosvg{
@@ -225,8 +228,7 @@ body{
  --porcentajehumai: 0;
  --porcentajetempe: 0;
  --porcentajehumti: 0;
- --porcentajelumi: 0;
-
+ --porcentajelumi: 0
 }
 
 path#humai{
@@ -280,4 +282,12 @@ button.navbar-toggler {
 }
 .navbar{
     z-index: 80000 !important;
+}
+
+.regadera {
+    background-image: url(../img/regadera.png);
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
