@@ -12,15 +12,20 @@
 <body>
 	<div class="container-fluid">
 	<!-- Menú -->
-		<nav class="navbar fixed-top navbar-light justify-content-end">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-				<div class="info"><i class="fa fa-info" aria-hidden="true"></i></div>
-			</button>
+		<nav class="navbar fixed-top navbar-light">
+			<div class="navbar-item">
+				<div class="regadera"><i class="regadera" aria-hidden="true"></i></div>
+			</div>
+		<div class="col-43">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			<div>
+				<div class="info"><i class="fa fa-info" aria-hidden="true"></i></div>
+			</div>
+		</div>
 		</nav>
-		<img src="img/fondo2.png" class="cielo hora">
+		<img src="img/fondo2.png" class="cielo hora" alt="fondo">
 		<!-- principal -->
 		<div class="row principal fixed-top">
 			<div class="col-12">
@@ -71,6 +76,7 @@
 								<li id="dos" onclick="giramenu(90,2)"><div>2</div></li>
 								<li id="tres" onclick="giramenu(180,3)"><div>3</div></li>
 								<li id="cuatro" onclick="giramenu(270,4)"><div>4</div></li>
+							</ul>
 							</div>
 						</div>
 					</div>
@@ -82,7 +88,7 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.12.16/parser.min.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.12.16/parser.min.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
