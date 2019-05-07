@@ -43,7 +43,6 @@ function cambiarPorcentajes(planta) {
     $.ajax({
         type: "GET",
         url: "https://apamiv.netlify.com/xml/datos.xml",
-        cache: false,
         dataType: "xml",
         success: function(xml) {
             var temperatura = 0;
