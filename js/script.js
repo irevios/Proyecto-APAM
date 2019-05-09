@@ -7,6 +7,17 @@ $(function fondo() {
     $('.hora').css('-webkit-animation-delay', giro + 's');
     cambiarPorcentajes(1);
 });
+
+
+function abrirmenu(grados){
+    if($(".menuitem").hasClass('abierto')){
+        $(".menuitem").removeClass('abierto');
+    }
+    else{
+        $(".menuitem").addClass('abierto');   
+    }
+
+}
 // Menú circular
 $(function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
