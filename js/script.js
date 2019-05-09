@@ -49,8 +49,26 @@ function cambiarPorcentajes(planta) {
             $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
                 id = $(this).attr("id");
             });
+             var temperatura = 0;
+            var humaire = 0;
+            var humtierra = 0;
+            var luminosidad = 0;
+            var id;
+            $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
+                id = $(this).attr("id");
+            });
+            for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
+                $(xml).find("registro:eq(" + i + ")").each(function() {
+                    if ($(this).attr("planta") == id) {
+                        temperatura = $(this).find("temperatura").text();
+                        humaire = $(this).find("humedad_aire").text();
+                        humtierra = $(this).find("humedad_tierra").text();
+                        luminosidad = $(this).find("luminosidad").text();
+                    }
+                });
+            }
             setTimeout(function() {
-                $(".temp span").html(id + "ºC");
+                $(".temp span").html(temperatura + "ºC");
             }, 1000);
             }
     });
