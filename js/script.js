@@ -45,6 +45,7 @@ function cambiarPorcentajes(planta) {
         url: "https://apamiv.netlify.com/xml/datos.xml",
         dataType: "xml",
         success: function(xml) {
+            setTimeout(function() {
                 $("#statcirculosvg").css("--porcentajehumti", "60");
             }, 1000);
 });
