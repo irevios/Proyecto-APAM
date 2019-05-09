@@ -45,11 +45,7 @@ function cambiarPorcentajes(planta) {
         url: "https://apamiv.netlify.com/xml/datos.xml",
         dataType: "xml",
         success: function(xml) {
-            var id;
-            $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-                id = $(this).attr("id");
-            });
-             var temperatura = 0;
+            var temperatura = 0;
             var humaire = 0;
             var humtierra = 0;
             var luminosidad = 0;
@@ -67,10 +63,21 @@ function cambiarPorcentajes(planta) {
                     }
                 });
             }
+            $(".temp span").html(temperatura + "ºC");
+            $(".humaire span").html(humaire + "%");
+            $(".humagua span").html(humtierra + "%");
+            $(".luz span").html(luminosidad + "%");
+            $("#statcirculosvg").css("--porcentajetempe", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumai", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumti", 0 + "");
+            $("#statcirculosvg").css("--porcentajelumi", 0 + "");
             setTimeout(function() {
-                $(".temp span").html(temperatura + "ºC");
+                $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
+                $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
+                $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
+                $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
             }, 1000);
-            }
+        }
     });
 }
 
