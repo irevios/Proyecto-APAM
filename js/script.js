@@ -50,3 +50,12 @@ function giramenu(grados, planta) {
     cambiarPorcentajes(planta);
 }
 
+function cambiarPorcentajes(planta) {
+    $.ajax({
+        type: "GET",
+        url: "https://apamiv.netlify.com/xml/datos.xml",
+        dataType: "xml",
+        success: function(xml) {
+                $("#statcirculosvg").css("--porcentajehumti", "60");
+            }, 1000);
+}
