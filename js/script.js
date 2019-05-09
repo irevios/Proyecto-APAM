@@ -9,7 +9,7 @@ $(function fondo() {
 });
 // Menú circular
 $(function calculaCirculo() {
-    ancho = $('.menucircular')[0].getBoundingClientRect().height;
+    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
     $('body').css('--circulo', ancho + 'px');
 });
 $(window).resize(function calculaCirculo() {
@@ -24,13 +24,13 @@ function giramenu(grados, planta) {
         $('body').css('--rotacion', (-1) * 360 + 'deg');
         setTimeout(function() {
             $('.menucircular').css('transition', '0s');
-            $('body').css('--rotacion', 0 + 'deg')
+            $('body').css('--rotacion', 0 + 'deg');
         }, 1000);
     } else if (actual == 0 && deg == 270) {
         $('body').css('--rotacion', 90 + 'deg');
         setTimeout(function() {
             $('.menucircular').css('transition', '0s');
-            $('body').css('--rotacion', -270 + 'deg')
+            $('body').css('--rotacion', -270 + 'deg');
         }, 1000);
     } else {
         $('body').css('--rotacion', (-1) * deg + 'deg');
@@ -79,4 +79,15 @@ function cambiarPorcentajes(planta) {
             }, 1000);
         }
     });
+}
+
+
+function abrirmenu(grados){
+    if($(".menuitem").hasClass('abierto')){
+        $(".menuitem").removeClass('abierto');
+    }
+    else{
+        $(".menuitem").addClass('abierto');   
+    }
+
 }
