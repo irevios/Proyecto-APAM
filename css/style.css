@@ -33,11 +33,11 @@ body{
 	border: 1px solid black;
     }*/
 
- .stats, .emocion, .planta, .statsradial > div, .stats > .row{
-     height: 100%
- }
+    .stats, .emocion, .planta, .statsradial > div, .stats > .row{
+       height: 100%
+   }
 
- .stat{
+   .stat{
     background-color: white;
     display: block;
     border-radius: 4px;
@@ -221,73 +221,150 @@ body{
     }
 }
 #statcirculosvg{
- --humaimax: 350;
- --tempemax: 320;
- --humtimax: 290;
- --lumimax: 260;
- --porcentajehumai: 0;
- --porcentajetempe: 0;
- --porcentajehumti: 0;
- --porcentajelumi: 0
+   --humaimax: 350;
+   --tempemax: 320;
+   --humtimax: 290;
+   --lumimax: 260;
+   --porcentajehumai: 0;
+   --porcentajetempe: 0;
+   --porcentajehumti: 0;
+   --porcentajelumi: 0
 }
 
 path#humai{
     stroke: #44e5b2 !important;
     stroke-dasharray: calc(var(--humaimax) * var(--porcentajehumai)/100), var(--humaimax)!important;
-    transition: 1s;
+    transition: 1s
 }
 path#tempe{
     stroke: #e54343 !important;
     stroke-dasharray: calc(var(--tempemax) * var(--porcentajetempe)/100),var(--tempemax)!important;
-    transition: 1s;
+    transition: 1s
 }
 path#humti{
     stroke: #43a6e5 !important;
     stroke-dasharray: calc(var(--humtimax) * var(--porcentajehumti)/100),var(--humtimax)!important;
-    transition: 1s;
+    transition: 1s
 }
 path#lumi{
     stroke: #ffeb6d !important;
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
-    transition: 1s;
+    transition: 1s
 }
 
 path#humaibg{
-    stroke: #44e5b2 !important;
+    stroke: #44e5b2 !important
 }
 path#tempebg{
-    stroke: #e54343 !important;
+    stroke: #e54343 !important
 }
 path#humtibg{
-    stroke: #43a6e5 !important;
+    stroke: #43a6e5 !important
 }
 path#lumibg{
-    stroke: #ffeb6d !important;
+    stroke: #ffeb6d !important
 }
 
 button.navbar-toggler {
     border: none;
     border-radius: 50em;
     padding: 0.75rem .75rem;
-    background: white;
+    background: white
 }
 .navbar-light .navbar-toggler {
     color: rgb(0, 0, 0) !important;
-    outline-style: none;
+    outline-style: none
 }
 .info{
     display: block;
     width: 1em;
-    height: 1em;
+    height: 1em
 }
 .navbar{
-    z-index: 80000 !important;
+    z-index: 80000 !important
 }
 
-.regadera {
-    background-image: url(../img/regadera.png);
+
+.toggle{
     width: 1.5em;
     height: 1.5em;
+    background-image: url("../img/menu.png");
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;   
+}
+.regadera {
+    background-image: url("../img/regadera.png");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.info{
+    background-image: url("../img/info.png");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;   
+}
+
+.actu{
+    background-image: url("../img/actu.png");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;   
+}
+.menu.fixed-top {
+    width: 10rem;
+    height: 10rem;
+    z-index: 2000;
+    display: block;
+    position: relative;
+    float: right;
+    margin-top: 1em
+}
+.menutop {
+    display: block;
+    float: right;
+    padding: 1em;
+    position: relative;
+    background: white;
+    border-radius: 50%;
+    z-index: 2
+}
+
+.menuitem {
+    display: block;
+    position: absolute;
+    right: 0.7em;
+    z-index: 1;
+    margin: 0;
+    transition: 0.3s
+}
+.item{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: white;
+    padding: 1.2em;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.gira20.abierto{
+    transform: rotate(0deg);
+    transform-origin: right
+}
+.gira45.abierto{
+    transform: rotate(-45deg);
+    transform-origin: right
+}
+.gira90.abierto{
+    transform: rotate(-90deg);
+    transform-origin: right
+}
+.abierto > .item{
+    margin-right: 3em;
+    opacity: 1
+}
+.abierto{
+    right: 1.6em
 }
