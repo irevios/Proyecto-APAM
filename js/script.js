@@ -48,7 +48,8 @@ function cambiarPorcentajes(planta) {
             setTimeout(function() {
                 $("#statcirculosvg").css("--porcentajehumti", "60");
             }, 1000);
-});
+            }
+    });
 }
 
 
