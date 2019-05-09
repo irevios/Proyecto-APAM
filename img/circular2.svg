@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="../css/style.css" ?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="233.7mm"
+   height="233.7mm"
+   version="1.1"
+   viewBox="0 0 233.69632 233.69684"
+   id="statcirculosvg"
+   sodipodi:docname="circular2.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="730"
+     inkscape:window-height="480"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="0.094464969"
+     inkscape:cx="358.22116"
+     inkscape:cy="-305.71959"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="statcirculosvg" />
+  <path
+     id="lumibg"
+     d="m 35.58,116.8484 a 81.257,81.257 0 0 1 40.899,-70.527 81.257,81.257 0 0 1 81.526,0.47008 81.257,81.257 0 0 1 40.083,70.994"
+     style="fill:none;stroke:#ff2a2a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal;opacity:0.3"
+     inkscape:connector-curvature="0" />
+  <path
+     id="humaibg"
+     d="M 5.78,116.3101 A 111.07,111.07 0 0 1 117.3,5.7801 111.07,111.07 0 0 1 227.92,117.2201"
+     style="fill:none;stroke:#ff2a2a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal;opacity:0.3"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal"
+     d="M 5.78,116.3101 A 111.07,111.07 0 0 1 117.3,5.7801 111.07,111.07 0 0 1 227.92,117.2201"
+     id="humai" />
+  <path
+     id="tempebg"
+     d="m 15.53,116.8488 a 101.32,101.32 0 0 1 50.921,-87.894 101.32,101.32 0 0 1 101.58,0.45453 101.32,101.32 0 0 1 50.132,88.347"
+     style="fill:none;stroke:#ff2a2a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal;opacity:0.3"
+     inkscape:connector-curvature="0" />
+  <path
+     id="humtibg"
+     d="m 25.23,116.8488 a 91.613,91.613 0 0 1 45.988,-79.444 91.613,91.613 0 0 1 91.794,0.31375 91.613,91.613 0 0 1 45.444,79.756"
+     style="fill:none;stroke:#ff2a2a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal;opacity:0.3"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal"
+     d="m 15.53,116.8488 a 101.32,101.32 0 0 1 50.921,-87.894 101.32,101.32 0 0 1 101.58,0.45453 101.32,101.32 0 0 1 50.132,88.347"
+     id="tempe" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal"
+     d="m 25.23,116.8488 a 91.613,91.613 0 0 1 45.988,-79.444 91.613,91.613 0 0 1 91.794,0.31375 91.613,91.613 0 0 1 45.444,79.756"
+     id="humti" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;paint-order:normal"
+     d="m 35.58,116.8484 a 81.257,81.257 0 0 1 40.899,-70.527 81.257,81.257 0 0 1 81.526,0.47008 81.257,81.257 0 0 1 40.083,70.994"
+     id="lumi" />
+  <circle
+     id="circle7"
+     style="fill:#ffffff;paint-order:normal"
+     r="74.922997"
+     cy="116.8488"
+     cx="116.84999" />
+</svg>

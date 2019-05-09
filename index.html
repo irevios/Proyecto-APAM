@@ -2,30 +2,32 @@
 <html>
 <head>
 	<title>APAM</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width"/>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 </head>
 <body>
 	<div class="container-fluid">
-	<!-- Menú -->
-		<nav class="navbar fixed-top navbar-light">
-			<div class="navbar-item">
-				<div class="regadera"><i class="regadera" aria-hidden="true"></i></div>
+		<!-- Menu -->
+		<div class="menu fixed-top">
+			<div class="menutop" onclick="abrirmenu()">
+				<div class="toggle"></div>
 			</div>
-		<div class="col-43">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div>
-				<div class="info"><i class="fa fa-info" aria-hidden="true"></i></div>
+			<div class="menuitem gira20">
+				<div class="item info"></div>
+			</div>
+			<div class="menuitem gira45">
+				<div class="item regadera"></div>
+			</div>
+			<div class="menuitem gira90">
+				<div class="item actu"></div>
 			</div>
 		</div>
-		</nav>
-		<img src="img/fondo2.png" class="cielo hora" alt="fondo">
+		<img src="img/fondo2.png" class="cielo hora" alt="fondo"/>
 		<!-- principal -->
 		<div class="row principal fixed-top">
 			<div class="col-12">
@@ -36,7 +38,7 @@
 								<div class="row align-items-center justify-content-center">
 									<div class="temp col-12">
 										<i class="fa fa-thermometer-empty" aria-hidden="true"></i>
-										<span>0ºC</span>
+										<span>0&deg;C</span>
 									</div>
 									<div class="luz col-12">
 										<i class="fa fa-sun-o" aria-hidden="true"></i>
@@ -59,7 +61,7 @@
 				</div>
 				<div class="row statsradial fixed-bottom justify-content-center">
 					<div class="col-8">
-						<svg width="233.7mm" height="233.7mm" version="1.1" viewBox="0 0 233.69632 233.69684" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="statcirculosvg" class="menucircular2">
+						<svg width="233.7mm" height="233.7mm" version="1.1" viewBox="0 0 233.69632 233.69684" xmlns="http://www.w3.org/2000/svg"  id="statcirculosvg" class="menucircular2">
 							<path id="humaibg" d="m5.78 116.31a111.07 111.07 0 0 1 111.52 -110.53 111.07 111.07 0 0 1 110.62 111.44" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
 							<path id="tempebg" d="m15.53 116.85a101.32 101.32 0 0 1 50.921 -87.894 101.32 101.32 0 0 1 101.58 0.45453 101.32 101.32 0 0 1 50.132 88.347" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
 							<path id="humtibg" d="m25.23 116.85a91.613 91.613 0 0 1 45.988 -79.444 91.613 91.613 0 0 1 91.794 0.31375 91.613 91.613 0 0 1 45.444 79.756" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
@@ -77,18 +79,18 @@
 								<li id="tres" onclick="giramenu(180,3)"><div>3</div></li>
 								<li id="cuatro" onclick="giramenu(270,4)"><div>4</div></li>
 							</ul>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- tierra -->
-			<div class="row tierra fixed-bottom"></div>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.12.16/parser.min.js"></script>
-		<script src="js/script.js"></script>
-	</body>
+		<!-- tierra -->
+		<div class="row tierra fixed-bottom"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.12.16/parser.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
 </html>
