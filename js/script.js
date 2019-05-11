@@ -7,14 +7,29 @@ $(function fondo() {
     $('.hora').css('-webkit-animation-delay', giro + 's');
     cambiarPorcentajes(1);
 });
-// Menú circular
+
+
+// Menú superior
+
+function abrirmenu(grados){
+    if($(".menuitem").hasClass('abierto')){
+        $(".menuitem").removeClass('abierto');
+    }
+    else{
+        $(".menuitem").addClass('abierto');   
+    }
+
+}
+// Menú Stats
 $(function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
     $('body').css('--circulo', ancho + 'px');
 });
 $(window).resize(function calculaCirculo() {
-    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    $('body').css('--circulo', ancho + 'px');
+    // var ancho = $('.menucircular')[0].getBoundingClientRect().height;
+    // $('body').css('--circulo', ancho + 'px');
+    // $('.menucircular').css("transition","0s");
+    location.reload();
 });
 
 function giramenu(grados, planta) {
@@ -42,7 +57,7 @@ function giramenu(grados, planta) {
 function cambiarPorcentajes(planta) {
     $.ajax({
         type: "GET",
-        url: "https://apamiv.netlify.com/xml/datos.xml",
+        url: "xml/datos.xml",
         dataType: "xml",
         success: function(xml) {
             var temperatura = 0;
@@ -81,13 +96,3 @@ function cambiarPorcentajes(planta) {
     });
 }
 
-
-function abrirmenu(grados){
-    if($(".menuitem").hasClass('abierto')){
-        $(".menuitem").removeClass('abierto');
-    }
-    else{
-        $(".menuitem").addClass('abierto');   
-    }
-
-}
