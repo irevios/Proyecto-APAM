@@ -6,6 +6,7 @@ $(function fondo() {
     $('.hora').css('animation-delay', giro + 's');
     $('.hora').css('-webkit-animation-delay', giro + 's');
     cambiarPorcentajes(1);
+    calculaCirculo();
 });
 
 
@@ -21,16 +22,13 @@ function abrirmenu(grados){
 
 }
 // Menú Stats
-$(function calculaCirculo() {
+
+$(window).resize(calculaCirculo);
+
+function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
     $('body').css('--circulo', ancho + 'px');
-});
-$(window).resize(function calculaCirculo() {
-    // var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    // $('body').css('--circulo', ancho + 'px');
-    // $('.menucircular').css("transition","0s");
-    location.reload();
-});
+}
 
 function giramenu(grados, planta) {
     var deg = parseInt(grados);
@@ -57,7 +55,7 @@ function giramenu(grados, planta) {
 function cambiarPorcentajes(planta) {
     $.ajax({
         type: "GET",
-        url: "xml/datos.xml",
+        url: "xml/datos.xml",   
         dataType: "xml",
         success: function(xml) {
             var temperatura = 0;

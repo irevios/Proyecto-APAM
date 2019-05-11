@@ -20,16 +20,18 @@ body{
 .tierra{
 	height: 32%;
 	z-index: 2 !important;
-    background: rgba(95,64,53,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(95,64,53,1)), color-stop(34%, rgba(79,54,46,1)), color-stop(91%, rgba(78,47,44,1)), color-stop(100%, rgba(78,47,44,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(95,64,53,1) 0%, rgba(79,54,46,1) 34%, rgba(78,47,44,1) 91%, rgba(78,47,44,1) 100%);
-    opacity: 0.9
+    width: 200vw;
+    margin: 0 0 0 -49vw !important;
 }
 
+.tierra > div{
+    background-image: url(../img/tierra.png);
+    opacity: 0.8;
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    background-size: cover;
+}
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
 	border: 1px solid black;
     }*/
@@ -38,7 +40,7 @@ body{
        height: 100%
    }
 
-   .stat{
+.stat{
     background-color: white;
     display: block;
     border-radius: 4px;
@@ -83,52 +85,23 @@ body{
 /* Fondo cielo */
 .cielo{
     position: fixed;
-    top: 0;
-    margin-top: calc(8000px / -4);
-    height: 8000px;
-    width: 8000px;
-    margin-left: calc(8000px/-5);
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 86400s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spin;
-    -moz-animation-duration: 86400s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spin;
-    -ms-animation-duration: 86400s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-    animation-name: spin;
-    animation-duration: 86400s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    background-color: lightblue
+    top: -10em;
+    left: -3em;
+    height: 150%;
+    background-color: lightblue;
+     animation: moveSlideshow 86400s linear infinite;
+     filter: blur(1em);
 }
-@-ms-keyframes spin {
-    from { -ms-transform: rotate(0deg); }
-    to { -ms-transform: rotate(360deg); }
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-95%);  
+  }
 }
-@-moz-keyframes spin {
-    from { -moz-transform: rotate(0deg); }
-    to { -moz-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
+
 .hora{
-    animation-delay: -40000s; 
-    -webkit-animation-delay: -40000s
+    animation-delay: 0; 
+    -webkit-animation-delay: 0;
 }
 
 /* Menú y stats radial*/
