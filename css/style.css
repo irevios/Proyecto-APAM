@@ -1,6 +1,7 @@
 :root{
     --circulo: 0;
-    --rotacion:0deg
+    --rotacion:0deg;
+    overflow: hidden;
 }
 
 body{
