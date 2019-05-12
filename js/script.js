@@ -115,18 +115,16 @@ function obtenerXML(){
 
 
 function obtenerIdPlanta(planta){
-    var id;
     $(obtenerXML()).find("planta:eq(" + (planta - 1) + ")").each(function() {
-        id = $(this).attr("id");
-    });
-    
+       return $(this).attr("id");
+    });    
 }
 
 function obtenerTemperaturaActual(planta){
     for (var i = 0; i < $(obtenerXML()).find("registro").length && temperatura == 0; i++) {
         $(obtenerXML()).find("registro:eq(" + i + ")").each(function() {
             if ($(this).attr("planta") == obtenerIdPlanta(planta)) {
-                temperatura = $(this).find("temperatura").text();
+                returna $(this).find("temperatura").text();
             }
         });
     }
