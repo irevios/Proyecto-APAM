@@ -122,7 +122,7 @@ function cambiarPorcentajes(planta) {
     $(".temp span").html(obtenerTemperaturaActual(planta) + "ºC");  
 }
 
-function obtenerdelXML(planta){
+function cambiarPorcentajes(planta){
    return $.ajax({
     type: "GET",
     url: "xml/datos.xml",   
@@ -135,15 +135,15 @@ function obtenerdelXML(planta){
 
 
 function obtenerIdPlanta(planta){
-    obtenerXML().success(function (xml) {
+  
         $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
          return $(this).attr("id");
      });
-    });
+  
 }
 
 function obtenerTemperaturaActual(id,xml){
-    obtenerXML().success(function (xml) {
+  
         for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
             $(xml).find("registro:eq(" + i + ")").each(function() {
                 if ($(this).attr("planta") == id) {
@@ -151,6 +151,6 @@ function obtenerTemperaturaActual(id,xml){
                 }
             });
         }
-    });
+    
 }
 
