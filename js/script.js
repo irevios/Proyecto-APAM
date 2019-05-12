@@ -10,6 +10,26 @@ $(function fondo() {
 });
 
 
+$(function nubes(){
+    generarNubes();
+    generarNubes();    
+});
+
+function generarNubes(){
+    var num1 = Math.floor((Math.random() * 1250) + 100);
+    var num2 = Math.floor((Math.random() * 1250) + 100);
+    var parte1 = Math.floor((Math.random() * 10) + 1);
+    var parte2 = Math.floor((Math.random() * 4) + 1);
+    var lista = ["img/nube1.png","img/nube2.png","img/nube3.png", "img/nube4.png", "img/nube5.png"];
+    var nube = lista[Math.floor(Math.random() * lista.length)];
+    var nube2 = lista[Math.floor(Math.random() * lista.length)];
+    if(nube2 == nube){
+        nube2 = lista[Math.floor(Math.random() * lista.length)];
+    }
+    $(".nubes").append('<img src='+nube+' class="nube" style="animation: nube '+num1+'s cubic-bezier(0.06, 0.35, 0.84, 0.32) infinite;animation-delay: '+-num1/parte1+'s;"/>');
+    $(".nubes").append('<img src='+nube2+' class="nube" style="animation: nube '+num2+'s cubic-bezier(0.43, 1.12, 0.85, 1) infinite;animation-delay: '+-num2/parte2+'s;"/>');
+}
+
 // Menú superior
 
 function abrirmenu(grados){
@@ -99,7 +119,7 @@ function giramenu(grados, planta) {
 // }
 
 function cambiarPorcentajes(planta) {
-    $(".temp span").html(obtenerTemperaturaActual(planta) + "ºC");
+    $(".temp span").html(obtenerXML() + "ºC");
 }
 
 function obtenerXML(){
@@ -116,8 +136,8 @@ function obtenerXML(){
 
 function obtenerIdPlanta(planta){
     $(obtenerXML()).find("planta:eq(" + (planta - 1) + ")").each(function() {
-       return $(this).attr("id");
-    });    
+     return $(this).attr("id");
+ });    
 }
 
 function obtenerTemperaturaActual(planta){
@@ -130,23 +150,3 @@ function obtenerTemperaturaActual(planta){
     }
 }
 
-
-$(function nubes(){
-    generarNubes();
-    generarNubes();    
-});
-
-function generarNubes(){
-    var num1 = Math.floor((Math.random() * 1250) + 100);
-    var num2 = Math.floor((Math.random() * 1250) + 100);
-    var parte1 = Math.floor((Math.random() * 10) + 1);
-    var parte2 = Math.floor((Math.random() * 4) + 1);
-    var lista = ["img/nube1.png","img/nube2.png","img/nube3.png", "img/nube4.png", "img/nube5.png"];
-    var nube = lista[Math.floor(Math.random() * lista.length)];
-    var nube2 = lista[Math.floor(Math.random() * lista.length)];
-    if(nube2 == nube){
-        nube2 = lista[Math.floor(Math.random() * lista.length)];
-    }
-    $(".nubes").append('<img src='+nube+' class="nube" style="animation: nube '+num1+'s cubic-bezier(0.06, 0.35, 0.84, 0.32) infinite;animation-delay: '+-num1/parte1+'s;"/>');
-    $(".nubes").append('<img src='+nube2+' class="nube" style="animation: nube '+num2+'s cubic-bezier(0.43, 1.12, 0.85, 1) infinite;animation-delay: '+-num2/parte2+'s;"/>');
-}
