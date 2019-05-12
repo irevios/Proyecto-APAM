@@ -43,10 +43,8 @@ function abrirmenu(grados){
 }
 // Menú Stats
 
-$(window).resize(function calculaCirculo2() {
-  setTimeout(function() {
-    calculaCirculo();
-}, 150); 
+$(window).resize(function redimensionar() {
+    setTimeout(function() { calculaCirculo(); }, 150); 
 });
 
 function calculaCirculo() {
@@ -123,7 +121,7 @@ function cambiarPorcentajes(planta) {
 }
 
 function cambiarPorcentajes(planta){
-   return $.ajax({
+ return $.ajax({
     type: "GET",
     url: "xml/datos.xml",   
     dataType: "xml",
@@ -135,21 +133,20 @@ function cambiarPorcentajes(planta){
 
 
 function obtenerIdPlanta(xml,planta){ 
-        $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-         return $(this).attr("id");
-     });
-  
+    $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
+        return $(this).attr("id");
+    });
 }
 
 function obtenerTemperaturaActual(id,xml){
-        var temperatura = 0;
-        for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
-            $(xml).find("registro:eq(" + i + ")").each(function() {
-                if ($(this).attr("planta") == id) {
-                    return $(this).find("temperatura").text();
-                }
-            });
-        }
+    var temperatura = 0;
+    for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
+        $(xml).find("registro:eq(" + i + ")").each(function() {
+            if ($(this).attr("planta") == id) {
+                return $(this).find("temperatura").text();
+            }
+        });
+    }
     
 }
 
