@@ -142,7 +142,7 @@ function obtenerIdPlanta(xml,planta){
 }
 
 function obtenerTemperaturaActual(id,xml){
-  
+        var temperatura = 0;
         for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
             $(xml).find("registro:eq(" + i + ")").each(function() {
                 if ($(this).attr("planta") == id) {
