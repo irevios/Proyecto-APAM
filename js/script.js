@@ -124,7 +124,7 @@ function obtenerTemperaturaActual(planta){
     for (var i = 0; i < $(obtenerXML()).find("registro").length && temperatura == 0; i++) {
         $(obtenerXML()).find("registro:eq(" + i + ")").each(function() {
             if ($(this).attr("planta") == obtenerIdPlanta(planta)) {
-                returna $(this).find("temperatura").text();
+                return $(this).find("temperatura").text();
             }
         });
     }
