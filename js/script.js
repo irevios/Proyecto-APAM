@@ -1,3 +1,12 @@
+$(window).resize(function redimensionar() {
+    setTimeout(function() { calculaCirculo(); }, 150); 
+});
+
+function calculaCirculo() {
+    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
+    $('body').css('--circulo', ancho + 'px');
+}
+
 // Fondo
 $(function fondo() {
     var d = new Date();
@@ -43,14 +52,6 @@ function abrirmenu(grados){
 }
 // Menú Stats
 
-$(window).resize(function redimensionar() {
-    setTimeout(function() { calculaCirculo(); }, 150); 
-});
-
-function calculaCirculo() {
-    var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    $('body').css('--circulo', ancho + 'px');
-}
 
 function giramenu(grados, planta) {
     var deg = parseInt(grados);
