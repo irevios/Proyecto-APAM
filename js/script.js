@@ -74,79 +74,45 @@ function giramenu(grados, planta) {
     cambiarPorcentajes(planta);
 }
 
-// function cambiarPorcentajes(planta) {
-//     $.ajax({
-//         type: "GET",
-//         url: "xml/datos.xml",   
-//         dataType: "xml",
-//         success: function(xml) {
-//             var temperatura = 0;
-//             var humaire = 0;
-//             var humtierra = 0;
-//             var luminosidad = 0;
-//             var id;
-//             $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-//                 id = $(this).attr("id");
-//             });
-//             for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
-//                 $(xml).find("registro:eq(" + i + ")").each(function() {
-//                     if ($(this).attr("planta") == id) {
-//                         temperatura = $(this).find("temperatura").text();
-//                         humaire = $(this).find("humedad_aire").text();
-//                         humtierra = $(this).find("humedad_tierra").text();
-//                         luminosidad = $(this).find("luminosidad").text();
-//                     }
-//                 });
-//             }
-//             $(".temp span").html(temperatura + "ºC");
-//             $(".humaire span").html(humaire + "%");
-//             $(".humagua span").html(humtierra + "%");
-//             $(".luz span").html(luminosidad + "%");
-//             $("#statcirculosvg").css("--porcentajetempe", 0 + "");
-//             $("#statcirculosvg").css("--porcentajehumai", 0 + "");
-//             $("#statcirculosvg").css("--porcentajehumti", 0 + "");
-//             $("#statcirculosvg").css("--porcentajelumi", 0 + "");
-//             setTimeout(function() {
-//                 $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
-//                 $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
-//                 $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
-//                 $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
-//             }, 1000);
-//         }
-//     });
-// }
-
 function cambiarPorcentajes(planta) {
-    $(".temp span").html(obtenerTemperaturaActual(planta) + "ºC");  
-}
-
-function cambiarPorcentajes(planta){
- return $.ajax({
-    type: "GET",
-    url: "xml/datos.xml",   
-    dataType: "xml",
-    success: function(xml){
-        $(".temp span").html(obtenerTemperaturaActual(obtenerIdPlanta(xml,planta),xml) + "ºC");
-    }
-});
-}
-
-
-function obtenerIdPlanta(xml,planta){ 
-    $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-        return $(this).attr("id");
-    });
-}
-
-function obtenerTemperaturaActual(id,xml){
-    var temperatura = 0;
-    for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
-        $(xml).find("registro:eq(" + i + ")").each(function() {
-            if ($(this).attr("planta") == id) {
-                return $(this).find("temperatura").text();
+    $.ajax({
+        type: "GET",
+        url: "xml/datos.xml",   
+        dataType: "xml",
+        success: function(xml) {
+            var temperatura = 0;
+            var humaire = 0;
+            var humtierra = 0;
+            var luminosidad = 0;
+            var id;
+            $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
+                id = $(this).attr("id");
+            });
+            for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
+                $(xml).find("registro:eq(" + i + ")").each(function() {
+                    if ($(this).attr("planta") == id) {
+                        temperatura = $(this).find("temperatura").text();
+                        humaire = $(this).find("humedad_aire").text();
+                        humtierra = $(this).find("humedad_tierra").text();
+                        luminosidad = $(this).find("luminosidad").text();
+                    }
+                });
             }
-        });
-    }
-    
+            $(".temp span").html(temperatura + "ºC");
+            $(".humaire span").html(humaire + "%");
+            $(".humagua span").html(humtierra + "%");
+            $(".luz span").html(luminosidad + "%");
+            $("#statcirculosvg").css("--porcentajetempe", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumai", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumti", 0 + "");
+            $("#statcirculosvg").css("--porcentajelumi", 0 + "");
+            setTimeout(function() {
+                $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
+                $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
+                $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
+                $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
+            }, 1000);
+        }
+    });
 }
 
