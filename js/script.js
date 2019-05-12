@@ -128,10 +128,9 @@ function obtenerXML(){
         url: "xml/datos.xml",   
         dataType: "xml",
         success: function(xml) {
-            return xml;
+            return xml.text();
         }
     });
-     return xml;
 }
 
 
