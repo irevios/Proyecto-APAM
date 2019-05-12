@@ -1,7 +1,4 @@
-$(window).resize(function redimensionar() {
-   var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    $('body').css('--circulo', ancho + 'px');
-});
+
 
 function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
