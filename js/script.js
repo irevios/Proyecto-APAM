@@ -1,5 +1,5 @@
 $(window).resize(function redimensionar() {
-    setTimeout(function() { calculaCirculo(); }, 150); 
+    calculaCirculo();
 });
 
 function calculaCirculo() {
