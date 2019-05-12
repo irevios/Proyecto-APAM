@@ -128,7 +128,7 @@ function obtenerdelXML(planta){
     url: "xml/datos.xml",   
     dataType: "xml",
     success: function(xml){
-        obtenerTemperaturaActual(obtenerIdPlanta(xml,planta),xml);
+        $(".temp span").html(obtenerTemperaturaActual(obtenerIdPlanta(xml,planta),xml) + "ºC");
     }
 });
 }
