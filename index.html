@@ -32,32 +32,25 @@
 		<div class="row principal fixed-top">
 			<div class="col-12">
 				<div class="row centro">
-					<div class="col-3 stats">
-						<div class="row align-items-center">
-							<div class="stat">
-								<div class="row align-items-center justify-content-center">
-									<div class="temp col-12">
-										<i class="fa fa-thermometer-empty" aria-hidden="true"></i>
-										<span>0&deg;C</span>
-									</div>
-									<div class="luz col-12">
-										<i class="fa fa-sun-o" aria-hidden="true"></i>
-										<span>0%</span>
-									</div>
-									<div class="humaire col-12">
-										<i class="fa fa-cloud" aria-hidden="true"></i>
-										<span>0%</span>
-									</div>
-									<div class="humagua col-12">
-										<i class="fa fa-tint" aria-hidden="true"></i>
-										<span>0%</span>
-									</div>
-								</div>
-							</div>
+					<div class="stats">
+						<div class="temp">
+							<div class="icono"></div>
+							<span>0&deg;C</span>
+						</div>
+						<div class="luz">
+							<div class="icono"></div>
+							<span>0%</span>
+						</div>
+						<div class="humaire">
+							<div class="icono"></div>
+							<span>0%</span>
+						</div>
+						<div class="humagua">
+							<div class="icono"></div>
+							<span>0%</span>
 						</div>
 					</div>
-					<div class="col-6 planta"></div>
-					<div class="col-3 emocion"></div>
+					<div class="col-12 planta"></div>
 				</div>
 				<div class="row statsradial fixed-bottom justify-content-center">
 					<div class="col-8">
@@ -88,6 +81,7 @@
 		<div class="row tierra fixed-bottom">
 			<div></div>
 		</div>
+		<div class="nubes" onload="nubes()"></div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

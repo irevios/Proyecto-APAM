@@ -17,23 +17,64 @@ body{
 	z-index: 1
 }
 
+.centro{
+	height: 70%
+}
+
+/* Fondo cielo */
+.cielo{
+    position: fixed;
+    top: -10em;
+    left: -3em;
+    height: 150%;
+    background-color: lightblue;
+    animation: cambiarCielo 86400s linear infinite;
+    width: auto;
+}
+
+@keyframes cambiarCielo {
+  100% { 
+    transform: translateX(-95%);  
+  }
+}
+
+.nube{
+    display: block;
+    position: absolute;
+    max-height: 50%;
+    opacity: 0.8;
+}
+
+@keyframes nube {
+    0%   { transform: translateX(-120%); }
+    100% { transform: translateX(120%); } 
+}
+
+.hora{
+    animation-delay: 0; 
+    -webkit-animation-delay: 0;
+}
+
+
 .tierra{
-	height: 32%;
-	z-index: 2 !important;
+    height: 32%;
+    z-index: 2 !important;
     width: 200vw;
     margin: 0 0 0 -49vw !important;
+    mix-blend-mode: multiply;
+    margin: 0 0 0 -49vw !important;
+    opacity: 0.7;
 }
 
 .tierra > div{
     background-image: url(../img/tierra.png);
-    opacity: 0.8;
     width: 100%;
     height: 200%;
     border-radius: 50%;
     background-size: cover;
 }
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
-	border: 1px solid black;
+    border: 1px solid black;
     }*/
 
     .stats, .emocion, .planta, .statsradial > div, .stats > .row{
@@ -78,32 +119,6 @@ body{
     font-size: 0.8em;
     height: calc(7em / 3.5)
 }
-.centro{
-	height: 70%
-}
-
-/* Fondo cielo */
-.cielo{
-    position: fixed;
-    top: -10em;
-    left: -3em;
-    height: 150%;
-    background-color: lightblue;
-     animation: moveSlideshow 86400s linear infinite;
-     filter: blur(1em);
-}
-
-@keyframes moveSlideshow {
-  100% { 
-    transform: translateX(-95%);  
-  }
-}
-
-.hora{
-    animation-delay: 0; 
-    -webkit-animation-delay: 0;
-}
-
 /* Menú y stats radial*/
 .statsradial{
 	height: 30%
@@ -312,6 +327,9 @@ button.navbar-toggler {
     z-index: 1;
     margin: 0;
     transition: 0.3s
+}
+.menutop, .menuitem{
+    cursor: pointer;
 }
 .item{
     width: 1.5em;
