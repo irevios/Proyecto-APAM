@@ -119,7 +119,7 @@ function giramenu(grados, planta) {
 // }
 
 function cambiarPorcentajes(planta) {
-    $(".temp span").html(obtenerXML() + "ºC");
+    $(".temp span").html(obtenerXML() + "ºC");  
 }
 
 function obtenerXML(){
@@ -131,6 +131,7 @@ function obtenerXML(){
             return xml;
         }
     });
+     return xml;
 }
 
 
