@@ -134,8 +134,7 @@ function cambiarPorcentajes(planta){
 }
 
 
-function obtenerIdPlanta(planta){
-  
+function obtenerIdPlanta(xml,planta){ 
         $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
          return $(this).attr("id");
      });
