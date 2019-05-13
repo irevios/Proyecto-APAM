@@ -5,7 +5,6 @@ $(window).resize(function redimensionar() {
 function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
     $('body').css('--circulo', ancho + 'px');
-    $('.etiqueta').circleType({radius:384, dir:-1});
 }
 
 
