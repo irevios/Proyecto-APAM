@@ -7,8 +7,8 @@
 body{
     overflow: hidden;
     font-family: Roboto !important;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 .container-fluid{
 	height: 100vh
@@ -40,9 +40,12 @@ body{
   }
 }
 .nubes{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    display: block;
+    position: fixed;
+    left: 0;
 }
 
 .nube{
@@ -80,52 +83,66 @@ body{
     border-radius: 50%;
     background-size: cover;
 }
+
+.tierra > img{
+    position: fixed;
+    display: block;
+    width: 150%;
+    max-height: 70%;
+    left: -23vw;
+    right: -5vw;
+    bottom: -5%;
+}
 /*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
     border: 1px solid black;
-    }*/
+    }
+*/
 
-    .stats, .emocion, .planta, .statsradial > div, .stats > .row{
+   .stats, .emocion, .planta, .statsradial > div, .stats > .row{
        height: 100%
    }
 
-.stat{
-    background-color: white;
+.stats {
     display: block;
-    border-radius: 4px;
-    margin-left: 30%;
-    margin-right: 0;
-    width: auto;
-    height: auto;
-    text-align: center
+    position: fixed;
+    width: 14em;
+    padding: 2em;
+    left: 0;
+    z-index: 1500;
 }
-.stat > .row{
-    height: 100%;
-    padding: 1em
-}
-.stat i{
-    font-size: 1.2em;
-    padding-right: calc(var(--circulo)/25)
-}
-.stat span{
-    font-size: 1.2em
-}
-.stat:before{
-    content: "";
+.stats span {
     display: block;
-    position: absolute;
-    background-color: #ffffff;
-    height: calc(var(--circulo)/18);
-    left: auto;
-    width: calc(var(--circulo)/18);
-    right: calc(var(--circulo)/-40);
-    top: 48%;
-    transform: rotate(45deg);
-    bottom: auto
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding-top: 0.7em;
 }
-.temp,.luz,.humaire,.humagua{
+.temp, .luz, .humaire, .humagua {
     font-size: 0.8em;
-    height: calc(7em / 3.5)
+    width: 4em;
+    display: block;
+    position: relative;
+    height: 4em;
+    margin: 1em;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0px 0px 1em #ffffff4d;
 }
+
+.temp{
+    border: 0.5em solid #e54343;
+}
+.luz{
+    border: 0.5em solid #ffeb6d;
+}
+.humaire{
+    border: 0.5em solid #44e5b2;
+}
+.humagua{
+    border: 0.5em solid #43a6e5;
+}
+
+
 /* Menú y stats radial*/
 .statsradial{
 	height: 30%
@@ -202,20 +219,7 @@ body{
     transform: rotate(calc((360/4)*3deg))
 }
 
-@media (max-width:600px){
-    .statsradial > .col-8{
-        height: 90%;
-        bottom: 0;
-        position: absolute
-    }
-}
-@media (max-width:400px){
-    .statsradial > .col-8{
-        height: 70%;
-        bottom: 0;
-        position: absolute
-    }
-}
+
 #statcirculosvg{
    --humaimax: 350;
    --tempemax: 320;
@@ -366,4 +370,51 @@ button.navbar-toggler {
 }
 .abierto{
     right: 1.6em
+}
+
+.planta{
+    margin: 0 auto;
+    top: 0;
+    display: block;
+    left: 0;
+    position: fixed !important;
+    transition: 1s;
+}
+
+.planta > object{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: 5em;
+    width: calc(var(--circulo)/1.5);
+}
+
+
+.menucircular img{
+    width: 100%;
+    height: 115%;
+    margin-top: -1em;
+    -webkit-filter: drop-shadow(0 0 0.3em rgba(0,0,0,0.5));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
+
+@media (max-width:540px){
+.tierra > img {
+    bottom: 9%;
+}
+}
+@media (max-width:600px){
+    .statsradial > .col-8{
+        height: 90%;
+        bottom: 0;
+        position: absolute
+    }
+}
+@media (max-width:400px){
+    .statsradial > .col-8{
+        height: 70%;
+        bottom: 0;
+        position: absolute
+    }
 }

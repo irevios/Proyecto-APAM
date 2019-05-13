@@ -1,20 +1,24 @@
 $(window).resize(function redimensionar() {
-   var ancho = $('.menucircular')[0].getBoundingClientRect().height;
-    $('body').css('--circulo', ancho + 'px');
+    setTimeout(function() { calculaCirculo(); }, 150); 
 });
 
 function calculaCirculo() {
     var ancho = $('.menucircular')[0].getBoundingClientRect().height;
     $('body').css('--circulo', ancho + 'px');
+    $('.etiqueta').circleType({radius:384, dir:-1});
 }
+
 
 // Fondo
 $(function fondo() {
     var d = new Date();
     var time = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
-    var giro = Math.round((time) * -1);
-    $('.hora').css('animation-delay', giro + 's');
-    $('.hora').css('-webkit-animation-delay', giro + 's');
+    var desplazar = Math.round((time) * -1);
+    $('.hora').css('animation-delay', desplazar + 's');
+    $('.hora').css('-webkit-animation-delay', desplazar + 's');
+    if(desplazar > -21000 || desplazar < -75000){
+        $('.planta').css("filter", "hue-rotate(31deg) saturate(0.8) brightness(0.7)");
+    }
     cambiarPorcentajes(1);
     calculaCirculo();
 });
@@ -74,6 +78,7 @@ function giramenu(grados, planta) {
     }
     $('.menucircular').css('transition', '1s');
     cambiarPorcentajes(planta);
+    cambiarImgPlanta(planta);
 }
 
 function cambiarPorcentajes(planta) {
@@ -118,3 +123,20 @@ function cambiarPorcentajes(planta) {
     });
 }
 
+function cambiarImgPlanta(planta){
+    var img = "";
+    if(planta == 1){
+        img= "img/gardenia.svg";
+    }
+    if(planta == 2){
+        img= "img/poto.svg";
+    }
+    if(planta == 3){
+        img= "img/cactus.svg";
+    }
+    if(planta == 4){
+        img= "img/culantrillo.svg";
+    }
+    $(".planta > img").attr("src", img);
+       
+}
