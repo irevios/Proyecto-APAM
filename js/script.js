@@ -60,7 +60,7 @@ function abrirmenu(grados){
 function giramenu(grados, planta) {
     var deg = parseInt(grados);
     var actual = parseInt($('body').css('--rotacion'));
-    if (actual == -270 && deg == 0) {
+    if (actual == -270 && deg === 0) {
         $('body').css('--rotacion', (-1) * 360 + 'deg');
         setTimeout(function() {
             $('.menucircular').css('transition', '0s');
@@ -94,7 +94,7 @@ function cambiarPorcentajes(planta) {
             $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
                 id = $(this).attr("id");
             });
-            for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
+            for (var i = 0; i < $(xml).find("registro").length && temperatura === 0; i++) {
                 $(xml).find("registro:eq(" + i + ")").each(function() {
                     if ($(this).attr("planta") == id) {
                         temperatura = $(this).find("temperatura").text();
