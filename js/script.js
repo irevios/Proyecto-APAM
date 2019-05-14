@@ -124,10 +124,10 @@ function cambiarPorcentajes(planta) {
 
             $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
                 id = $(this).attr("id");
-                tempopt= $(this).find("temperatura_opt").text();
-                haiopt= $(this).find("humedad_aire_opt").text();
-                htiopt= $(this).find("humedad_tierra_opt").text();
-                lumiopt= $(this).find("luminosidad_opt").text();
+                tempopt= $(this).find("temperatura_opt");
+                haiopt= $(this).find("humedad_aire_opt");
+                htiopt= $(this).find("humedad_tierra_opt");
+                lumiopt= $(this).find("luminosidad_opt");
             });
             for (var i = 0; i < $(xml).find("registro").length && temperatura === 0; i++) {
                 $(xml).find("registro:eq(" + i + ")").each(function() {
@@ -146,7 +146,7 @@ function cambiarPorcentajes(planta) {
             $(".humagua span").html(humtierra + "%");
             $(".luz span").html(luminosidad + "%");
             //Optimos
-            $(".temp.optima span").html(tempopt + "ºC");
+            $(".temp.optima span").html(tempopt.attr("min") + "ºC");
             $(".humaire.optima span").html(haiopt + "%");
             $(".humagua.optima span").html(htiopt + "%");
             $(".luz.optima span").html(lumiopt + "%");
