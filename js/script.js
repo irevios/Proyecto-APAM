@@ -146,7 +146,7 @@ function cambiarPorcentajes(planta) {
             $(".humagua span").html(humtierra + "%");
             $(".luz span").html(luminosidad + "%");
             //Optimos
-            $(".temp.optima span").html(tempopt.attr("min") + "ºC / " + tempopt.attr("min") + "ºC");
+            $(".temp.optima span").html(tempopt.attr("min") + "ºC / " + tempopt.attr("max") + "ºC");
             $(".humaire.optima span").html(haiopt.attr("min") + "% / " + haiopt.attr("max") + "%");
             $(".humagua.optima span").html(htiopt.attr("min") + "% / " + htiopt.attr("max") + "%");
             $(".luz.optima span").html(lumiopt.attr("min") + "% / " + lumiopt.attr("max") + "%");
