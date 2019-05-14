@@ -95,10 +95,10 @@
 			<luminosidad>58</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r10" min="23" planta="P04" seg="23">
-			<temperatura>27</temperatura>
-			<humedad_aire>38</humedad_aire>
-			<humedad_tierra>72</humedad_tierra>
-			<luminosidad>73</luminosidad>
+			<temperatura>22</temperatura>
+			<humedad_aire>46</humedad_aire>
+			<humedad_tierra>89</humedad_tierra>
+			<luminosidad>85</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r11" min="40" planta="P04" seg="13">
 			<temperatura>27</temperatura>
