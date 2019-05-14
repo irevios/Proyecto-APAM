@@ -9,7 +9,7 @@
 			<emocion cantidad="78" actual="rel"/>
 		</planta>
 		<planta id="P02" nombre="poto">
-			<temperatura_opt max="40" min="15"/>
+			<temperatura_opt max="40" min="18"/>
 			<humedad_aire_opt max="50" min="0"/>
 			<humedad_tierra_opt max="50" min="5"/>
 			<luminosidad_opt max="70" min="40"/>
@@ -77,10 +77,10 @@
 			<luminosidad>58</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r07" min="23" planta="P03" seg="23">
-			<temperatura>27</temperatura>
-			<humedad_aire>38</humedad_aire>
-			<humedad_tierra>72</humedad_tierra>
-			<luminosidad>73</luminosidad>
+			<temperatura>16</temperatura>
+			<humedad_aire>28</humedad_aire>
+			<humedad_tierra>52</humedad_tierra>
+			<luminosidad>56</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r08" min="40" planta="P03" seg="13">
 			<temperatura>27</temperatura>

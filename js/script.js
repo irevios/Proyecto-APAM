@@ -141,10 +141,10 @@ function cambiarPorcentajes(planta) {
             }
 
             // Concretos
-            $(".temp span").html(temperatura + "ºC");
-            $(".humaire span").html(humaire + "%");
-            $(".humagua span").html(humtierra + "%");
-            $(".luz span").html(luminosidad + "%");
+            $(".temp.concreta span").html(temperatura + "ºC");
+            $(".humaire.concreta span").html(humaire + "%");
+            $(".humagua.concreta span").html(humtierra + "%");
+            $(".luz.concreta span").html(luminosidad + "%");
             //Optimos
             $(".temp.optima span").html(tempopt.attr("min") + "ºC / " + tempopt.attr("max") + "ºC");
             $(".humaire.optima span").html(haiopt.attr("min") + "% / " + haiopt.attr("max") + "%");
