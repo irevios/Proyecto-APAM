@@ -1,9 +1,9 @@
+/* General */
 :root{
     --circulo: 0;
     --rotacion:0deg;
     overflow: hidden;
 }
-
 body{
     overflow: hidden;
     font-family: Roboto !important;
@@ -13,17 +13,15 @@ body{
 .container-fluid{
 	height: 100vh
 }
-
 .principal{
 	height: 100vh;
 	z-index: 1
 }
-
 .centro{
 	height: 70%
 }
 
-/* Fondo cielo */
+/* Cielo */
 .cielo{
     position: fixed;
     top: -10em;
@@ -33,7 +31,6 @@ body{
     animation: cambiarCielo 86400s linear infinite;
     width: auto;
 }
-
 @keyframes cambiarCielo {
   100% { 
     transform: translateX(-95%);  
@@ -47,25 +44,22 @@ body{
     position: fixed;
     left: 0;
 }
-
 .nube{
     display: block;
     position: absolute;
     max-height: 50%;
     opacity: 0.8;
 }
-
 @keyframes nube {
     0%   { transform: translateX(-120%); }
     100% { transform: translateX(120%); } 
 }
-
 .hora{
     animation-delay: 0; 
     -webkit-animation-delay: 0;
 }
 
-
+/* Tierra */
 .tierra{
     height: 32%;
     z-index: 2 !important;
@@ -75,7 +69,6 @@ body{
     margin: 0 0 0 -49vw !important;
     opacity: 0.7;
 }
-
 .tierra > div{
     background-image: url(../img/tierra.png);
     width: 100%;
@@ -83,7 +76,6 @@ body{
     border-radius: 50%;
     background-size: cover;
 }
-
 .tierra > img{
     position: fixed;
     display: block;
@@ -93,57 +85,69 @@ body{
     right: -5vw;
     bottom: -5%;
 }
-/*.statsradial,.statsradial div,.planta,.stats,.emocion,.tierra{
-    border: 1px solid black;
-    }
-*/
 
-   .stats, .emocion, .planta, .statsradial > div, .stats > .row{
-       height: 100%
-   }
-
+/* Estadisticas concretas */
 .stats {
     display: block;
     position: fixed;
-    width: 14em;
+    width: 15em;
     padding: 2em;
     left: 0;
     z-index: 1500;
 }
-.stats span {
-    display: block;
-    position: relative;
-    text-align: center;
+.etiqueta {
     width: 100%;
-    padding-top: 0.7em;
+    height: auto;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 0.4em;
+    font-weight: bolder;
+    color: #5f5e5e;
+    padding: 0.4em;
 }
+.optima {
+    zoom: 0.85;
+    width: 11em;
+    margin-top: -1.2em !important;
+    border: 0 !important;
+    right: 0;
+    background: #ffffffc2 !important;
+    left: 18%;
+    top: -3em;
+    margin-right: 1.2em !important;
+    opacity: 0;
+    z-index: -1;
+    transition: 1s;
+}
+
+.optima.mostrar{
+    opacity: 1 !important;
+    top: 0em !important;
+}
+
 .temp, .luz, .humaire, .humagua {
     font-size: 0.8em;
-    width: 4em;
     display: block;
     position: relative;
-    height: 4em;
     margin: 1em;
-    border-radius: 50%;
-    color: #fff;
-    box-shadow: 0px 0px 1em #ffffff4d;
+    color: #000;
+    background: #fff;
 }
-
 .temp{
-    border: 0.5em solid #e54343;
+    border-bottom: 0.5em solid #e54343;
 }
 .luz{
-    border: 0.5em solid #ffeb6d;
+    border-bottom: 0.5em solid #ffeb6d;
 }
 .humaire{
-    border: 0.5em solid #44e5b2;
+    border-bottom: 0.5em solid #44e5b2;
 }
 .humagua{
-    border: 0.5em solid #43a6e5;
+    border-bottom: 0.5em solid #43a6e5;
 }
 
-
-/* Menú y stats radial*/
+/* Menu plantas y porcentajes radiales*/
 .statsradial{
 	height: 30%
 }
@@ -154,8 +158,6 @@ body{
     width: var(--circulo);
     max-width: var(--circulo)
 }
-
-/* Menú circular*/
 .menucircular{
     width: var(--circulo);
     height: 200%;
@@ -218,8 +220,14 @@ body{
     margin: auto 0;
     transform: rotate(calc((360/4)*3deg))
 }
-
-
+.menucircular img{
+    width: 100%;
+    height: 115%;
+    margin-top: -1em;
+    -webkit-filter: drop-shadow(0 0 0.3em rgba(0,0,0,0.5));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
 #statcirculosvg{
    --humaimax: 350;
    --tempemax: 320;
@@ -230,7 +238,6 @@ body{
    --porcentajehumti: 0;
    --porcentajelumi: 0
 }
-
 path#humai{
     stroke: #44e5b2 !important;
     stroke-dasharray: calc(var(--humaimax) * var(--porcentajehumai)/100), var(--humaimax)!important;
@@ -251,7 +258,6 @@ path#lumi{
     stroke-dasharray: calc(var(--lumimax) * var(--porcentajelumi)/100), var(--lumimax) !important;
     transition: 1s
 }
-
 path#humaibg{
     stroke: #44e5b2 !important
 }
@@ -265,16 +271,7 @@ path#lumibg{
     stroke: #ffeb6d !important
 }
 
-button.navbar-toggler {
-    border: none;
-    border-radius: 50em;
-    padding: 0.75rem .75rem;
-    background: white
-}
-.navbar-light .navbar-toggler {
-    color: rgb(0, 0, 0) !important;
-    outline-style: none
-}
+/* Menú */
 .info{
     display: block;
     width: 1em;
@@ -283,8 +280,6 @@ button.navbar-toggler {
 .navbar{
     z-index: 80000 !important
 }
-
-
 .toggle{
     width: 1.5em;
     height: 1.5em;
@@ -298,14 +293,12 @@ button.navbar-toggler {
     background-position: center;
     background-repeat: no-repeat
 }
-
 .info{
     background-image: url("../img/info.png");
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;   
 }
-
 .actu{
     background-image: url("../img/actu.png");
     background-size: 60%;
@@ -330,7 +323,6 @@ button.navbar-toggler {
     border-radius: 50%;
     z-index: 2
 }
-
 .menuitem {
     display: block;
     position: absolute;
@@ -351,7 +343,6 @@ button.navbar-toggler {
     transition: 0.3s;
     opacity: 0;
 }
-
 .gira20.abierto{
     transform: rotate(0deg);
     transform-origin: right
@@ -372,6 +363,7 @@ button.navbar-toggler {
     right: 1.6em
 }
 
+/* Planta */
 .planta{
     margin: 0 auto;
     top: 0;
@@ -380,7 +372,6 @@ button.navbar-toggler {
     position: fixed !important;
     transition: 1s;
 }
-
 .planta > object{
     display: block;
     position: relative;
@@ -389,20 +380,14 @@ button.navbar-toggler {
     width: calc(var(--circulo)/1.5);
 }
 
-
-.menucircular img{
-    width: 100%;
-    height: 115%;
-    margin-top: -1em;
-    -webkit-filter: drop-shadow(0 0 0.3em rgba(0,0,0,0.5));
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
-    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
-}
-
+/* Media queries */
 @media (max-width:540px){
-.tierra > img {
-    bottom: 9%;
-}
+    .tierra > img {
+        bottom: 9%;
+    }
+    .stats {
+        zoom: 0.8;
+    }
 }
 @media (max-width:600px){
     .statsradial > .col-8{

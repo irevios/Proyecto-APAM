@@ -1,3 +1,5 @@
+// Ventana Responsive
+
 $(window).resize(function redimensionar() {
     setTimeout(function() { calculaCirculo(); }, 150); 
 });
@@ -8,7 +10,7 @@ function calculaCirculo() {
 }
 
 
-// Fondo
+// Cielo y config inicial
 $(function fondo() {
     var d = new Date();
     var time = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
@@ -21,7 +23,6 @@ $(function fondo() {
     cambiarPorcentajes(1);
     calculaCirculo();
 });
-
 
 $(function nubes(){
     generarNubes();
@@ -44,7 +45,6 @@ function generarNubes(){
 }
 
 // Menú superior
-
 function abrirmenu(grados){
     if($(".menuitem").hasClass('abierto')){
         $(".menuitem").removeClass('abierto');
@@ -52,11 +52,18 @@ function abrirmenu(grados){
     else{
         $(".menuitem").addClass('abierto');   
     }
-
 }
-// Menú Stats
 
+function muestraOptimos(){
+    if($(".optima").hasClass('mostrar')){
+        $(".optima").removeClass('mostrar');
+    }
+    else{
+        $(".optima").addClass('mostrar');   
+    }
+}
 
+// Menú plantas y estadisticas radial
 function giramenu(grados, planta) {
     var deg = parseInt(grados);
     var actual = parseInt($('body').css('--rotacion'));
@@ -80,48 +87,6 @@ function giramenu(grados, planta) {
     cambiarImgPlanta(planta);
 }
 
-function cambiarPorcentajes(planta) {
-    $.ajax({
-        type: "GET",
-        url: "xml/datos.xml",   
-        dataType: "xml",
-        success: function(xml) {
-            var temperatura = 0;
-            var humaire = 0;
-            var humtierra = 0;
-            var luminosidad = 0;
-            var id;
-            $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-                id = $(this).attr("id");
-            });
-            for (var i = 0; i < $(xml).find("registro").length && temperatura === 0; i++) {
-                $(xml).find("registro:eq(" + i + ")").each(function() {
-                    if ($(this).attr("planta") == id) {
-                        temperatura = $(this).find("temperatura").text();
-                        humaire = $(this).find("humedad_aire").text();
-                        humtierra = $(this).find("humedad_tierra").text();
-                        luminosidad = $(this).find("luminosidad").text();
-                    }
-                });
-            }
-            $(".temp span").html(temperatura + "ºC");
-            $(".humaire span").html(humaire + "%");
-            $(".humagua span").html(humtierra + "%");
-            $(".luz span").html(luminosidad + "%");
-            $("#statcirculosvg").css("--porcentajetempe", 0 + "");
-            $("#statcirculosvg").css("--porcentajehumai", 0 + "");
-            $("#statcirculosvg").css("--porcentajehumti", 0 + "");
-            $("#statcirculosvg").css("--porcentajelumi", 0 + "");
-            setTimeout(function() {
-                $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
-                $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
-                $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
-                $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
-            }, 1000);
-        }
-    });
-}
-
 function cambiarImgPlanta(planta){
     var img = "";
     if(planta == 1){
@@ -137,5 +102,66 @@ function cambiarImgPlanta(planta){
         img= "img/culantrillo.svg";
     }
     $(".planta > img").attr("src", img);
-       
+    
+}
+
+// Coger datos del XML
+function cambiarPorcentajes(planta) {
+    $.ajax({
+        type: "GET",
+        url: "xml/datos.xml",   
+        dataType: "xml",
+        success: function(xml) {
+            var id;
+            var temperatura = 0;
+            var tempopt = 0;
+            var humaire = 0;
+            var haiopt = 0;
+            var humtierra = 0;
+            var htiopt = 0;
+            var luminosidad = 0;
+            var lumiopt = 0;
+
+            $(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
+                id = $(this).attr("id");
+                tempopt= $(this).find("temperatura_opt").text();
+                haiopt= $(this).find("humedad_aire_opt").text();
+                htiopt= $(this).find("humedad_tierra_opt").text();
+                lumiopt= $(this).find("luminosidad_opt").text();
+            });
+            for (var i = 0; i < $(xml).find("registro").length && temperatura === 0; i++) {
+                $(xml).find("registro:eq(" + i + ")").each(function() {
+                    if ($(this).attr("planta") == id) {
+                        temperatura = $(this).find("temperatura").text();
+                        humaire = $(this).find("humedad_aire").text();
+                        humtierra = $(this).find("humedad_tierra").text();
+                        luminosidad = $(this).find("luminosidad").text();
+                    }
+                });
+            }
+
+            // Concretos
+            $(".temp span").html(temperatura + "ºC");
+            $(".humaire span").html(humaire + "%");
+            $(".humagua span").html(humtierra + "%");
+            $(".luz span").html(luminosidad + "%");
+            //Optimos
+            $(".temp.optima span").html(tempopt + "ºC");
+            $(".humaire.optima span").html(haiopt + "%");
+            $(".humagua.optima span").html(htiopt + "%");
+            $(".luz.optima span").html(lumiopt + "%");
+
+            // Circular
+            $("#statcirculosvg").css("--porcentajetempe", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumai", 0 + "");
+            $("#statcirculosvg").css("--porcentajehumti", 0 + "");
+            $("#statcirculosvg").css("--porcentajelumi", 0 + "");
+            setTimeout(function() {
+                $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
+                $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
+                $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
+                $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
+            }, 1000);
+        }
+    });
 }
