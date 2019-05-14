@@ -139,7 +139,6 @@ function cambiarPorcentajes(planta) {
                     }
                 });
             }
-
             // Concretos
             $(".temp.concreta span").html(temperatura + "ºC");
             $(".humaire.concreta span").html(humaire + "%");
@@ -152,12 +151,12 @@ function cambiarPorcentajes(planta) {
             $(".luz.optima span").html(lumiopt.attr("min") + "% / " + lumiopt.attr("max") + "%");
 
             // Circular
-            $("#statcirculosvg").css("--porcentajetempe", 0 + "");
+            $("#statcirculosvg").css("--porcentajetempe", 0 +"");
             $("#statcirculosvg").css("--porcentajehumai", 0 + "");
             $("#statcirculosvg").css("--porcentajehumti", 0 + "");
             $("#statcirculosvg").css("--porcentajelumi", 0 + "");
             setTimeout(function() {
-                $("#statcirculosvg").css("--porcentajetempe", parseInt(temperatura) + "");
+                $("#statcirculosvg").css("--porcentajetempe", (parseInt(tempopt.attr("max"))/100) * parseInt(temperatura) + parseInt(tempopt.attr("min")) + "");
                 $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
                 $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
                 $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
