@@ -65,6 +65,8 @@ function muestraOptimos(){
 
 // Menú plantas y estadisticas radial
 function giramenu(grados, planta) {
+    cambiarPorcentajes(planta);
+    cambiarImgPlanta(planta);
     var deg = parseInt(grados);
     var actual = parseInt($('body').css('--rotacion'));
     if (actual == -270 && deg === 0) {
@@ -83,8 +85,6 @@ function giramenu(grados, planta) {
         $('body').css('--rotacion', (-1) * deg + 'deg');
     }
     $('.menucircular').css('transition', '1s');
-    cambiarPorcentajes(planta);
-    cambiarImgPlanta(planta);
 }
 
 function cambiarImgPlanta(planta){
