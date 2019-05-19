@@ -13,21 +13,21 @@
 			<humedad_aire_opt max="50" min="0"/>
 			<humedad_tierra_opt max="50" min="5"/>
 			<luminosidad_opt max="70" min="40"/>
-			<emocion cantidad="97" actual="fel"/>
+			<emocion cantidad="97" actual="pocha"/>
 		</planta>
 		<planta id="P03" nombre="cactus">
 			<temperatura_opt max="45" min="20"/>
 			<humedad_aire_opt max="20" min="0"/>
 			<humedad_tierra_opt max="30" min="5"/>
 			<luminosidad_opt max="100" min="70"/>
-			<emocion cantidad="68" actual="emp"/>
+			<emocion cantidad="68" actual="enf"/>
 		</planta>
 		<planta id="P04" nombre="culantrillo">
 			<temperatura_opt max="30" min="15"/>
 			<humedad_aire_opt max="100" min="70"/>
 			<humedad_tierra_opt max="40" min="20"/>
 			<luminosidad_opt max="60" min="25"/>
-			<emocion cantidad="58" actual="est"/>
+			<emocion cantidad="58" actual="emp"/>
 		</planta>
 	</plantas>
 	<emociones>
@@ -42,8 +42,8 @@
 	<registros>
 		<registro fecha="02/04/2019" hora="12" id="r01" min="23" planta="P01" seg="23">
 			<temperatura>27</temperatura>
-			<humedad_aire>38</humedad_aire>
-			<humedad_tierra>72</humedad_tierra>
+			<humedad_aire>62</humedad_aire>
+			<humedad_tierra>81</humedad_tierra>
 			<luminosidad>73</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r02" min="40" planta="P01" seg="13">
@@ -59,10 +59,10 @@
 			<luminosidad>58</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r04" min="23" planta="P02" seg="23">
-			<temperatura>27</temperatura>
-			<humedad_aire>38</humedad_aire>
-			<humedad_tierra>72</humedad_tierra>
-			<luminosidad>73</luminosidad>
+			<temperatura>42</temperatura>
+			<humedad_aire>0</humedad_aire>
+			<humedad_tierra>7</humedad_tierra>
+			<luminosidad>68</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r05" min="40" planta="P02" seg="13">
 			<temperatura>27</temperatura>
@@ -80,13 +80,13 @@
 			<temperatura>16</temperatura>
 			<humedad_aire>28</humedad_aire>
 			<humedad_tierra>52</humedad_tierra>
-			<luminosidad>56</luminosidad>
+			<luminosidad>85</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r08" min="40" planta="P03" seg="13">
 			<temperatura>27</temperatura>
 			<humedad_aire>40</humedad_aire>
 			<humedad_tierra>78</humedad_tierra>
-			<luminosidad>60</luminosidad>
+			<luminosidad>75</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="13" id="r09" min="02" planta="P03" seg="57">
 			<temperatura>26</temperatura>
@@ -95,10 +95,10 @@
 			<luminosidad>58</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r10" min="23" planta="P04" seg="23">
-			<temperatura>22</temperatura>
-			<humedad_aire>46</humedad_aire>
-			<humedad_tierra>89</humedad_tierra>
-			<luminosidad>85</luminosidad>
+			<temperatura>20</temperatura>
+			<humedad_aire>96</humedad_aire>
+			<humedad_tierra>87</humedad_tierra>
+			<luminosidad>42</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r11" min="40" planta="P04" seg="13">
 			<temperatura>27</temperatura>
