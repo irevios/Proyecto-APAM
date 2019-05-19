@@ -16,7 +16,22 @@
     transform-origin: 8em 13em;
     animation: moverCapaIzq 5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
 }		
-    
+
+#cactus #cabeza{
+    transform-origin: 46% 28%;
+    animation: moverCabeza 0.5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
+}
+
+#cactus #brazoder{
+    transform-origin: 13em 16em;
+    animation: moverBraDer 0.5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
+}
+#cactus #brazoizq{
+    transform-origin: 8em 13em;
+    animation: moverBraIzq 0.5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
+}       
+   
+
 @keyframes moverCabeza {
     0%   { transform: rotate(-3deg);}
     50% {transform: rotate(1deg);}
@@ -38,3 +53,15 @@
  0% {transform: rotate(-2deg) translate(15.9em, 0.1em);}
 50% {transform: rotate(5deg) translate(15.9em, 0.1em);}
 100% {transform: rotate(-2deg) translate(15.9em, 0.1em);}
+}
+
+@keyframes moverBraDer {
+    0%   { transform: rotate(3deg);}
+    50% {transform: rotate(-2deg);}
+    100% { transform: rotate(3deg);}
+}
+@keyframes moverBraIzq {
+ 0% {transform: rotate(-2deg);}
+50% {transform: rotate(5deg);}
+100% {transform: rotate(-2deg);}
+}

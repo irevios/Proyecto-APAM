@@ -105,7 +105,7 @@ function cambiarImgPlanta(planta){
     }
     if(planta == 3){
         img= "img/cactus.svg";
-        $('.planta > object').css('width', 'calc(var(--circulo)/1.19)');
+        $('.planta > object').css('width', 'calc(var(--circulo)/1.1)');
     }
     if(planta == 4){
         img= "img/culantrillo.svg";
