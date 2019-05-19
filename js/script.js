@@ -166,13 +166,13 @@ function cambiarPorcentajes(planta) {
             $("#statcirculosvg").css("--porcentajehumti", 0 + "");
             $("#statcirculosvg").css("--porcentajelumi", 0 + "");
             setTimeout(function() {
-                var suma = (parseInt(tempopt.attr("min"))/parseInt(tempopt.attr("max"))*100) + parseInt(temperatura);
+                var suma = (parseInt(temperatura) - parseInt(tempopt.attr("min"))) *100 /(parseInt(tempopt.attr("max")) - parseInt(tempopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajetempe", suma+"");
-                suma = (parseInt(haiopt.attr("min"))/parseInt(haiopt.attr("max"))*100) + parseInt(humaire);
+                suma = (parseInt(humaire) - parseInt(haiopt.attr("min"))) *100 /(parseInt(haiopt.attr("max")) - parseInt(haiopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajehumai", suma + "");
-                suma = (parseInt(lumiopt.attr("min"))/parseInt(lumiopt.attr("max"))*100) + parseInt(luminosidad);
+                suma = (parseInt(luminosidad) - parseInt(lumiopt.attr("min"))) *100 /(parseInt(lumiopt.attr("max")) - parseInt(lumiopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajelumi", suma + "");
-                suma = (parseInt(htiopt.attr("min"))/parseInt(htiopt.attr("max"))*100) + parseInt(humtierra);
+                suma = (parseInt(humtierra) - parseInt(htiopt.attr("min"))) *100 /(parseInt(htiopt.attr("max")) - parseInt(htiopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajehumti", suma + "");
             }, 1000);
         }
