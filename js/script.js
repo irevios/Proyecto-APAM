@@ -168,9 +168,12 @@ function cambiarPorcentajes(planta) {
             setTimeout(function() {
                 var suma = parseInt(temperatura)+parseInt(tempopt.attr("min"))/parseInt(tempopt.attr("max"))*100;
                 $("#statcirculosvg").css("--porcentajetempe", suma+"");
-                $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
-                $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
-                $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
+                suma = parseInt(humaire)+parseInt(haiopt.attr("min"))/parseInt(haiopt.attr("max"))*100;
+                $("#statcirculosvg").css("--porcentajehumai", suma + "");
+                suma = parseInt(luminosidad)+parseInt(lumiopt.attr("min"))/parseInt(lumiopt.attr("max"))*100;
+                $("#statcirculosvg").css("--porcentajelumi", suma + "");
+                suma = parseInt(humtierra)+parseInt(htiopt.attr("min"))/parseInt(htiopt.attr("max"))*100;
+                $("#statcirculosvg").css("--porcentajehumti", suma + "");
             }, 1000);
         }
     });
