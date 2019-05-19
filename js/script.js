@@ -1,4 +1,11 @@
 // Ventana Responsive
+$(window).on('load', function cargando() {
+        $(".cargando").css("opacity","0");
+        setTimeout(function() { 
+            $(".cargando").hide();
+        }, 1000);
+        
+});
 
 $(window).resize(function redimensionar() {
     setTimeout(function() { calculaCirculo(); }, 150); 
@@ -77,7 +84,7 @@ function giramenu(grados, planta) {
         }, 1000);
     } else if (actual == 0 && deg == 270) {
         $('body').css('--rotacion', 90 + 'deg');
-        setTimeout(function() {
+        setTimeout(function() { 
             $('.menucircular').css('transition', '0s');
             $('body').css('--rotacion', -270 + 'deg');
         }, 1000);
@@ -91,17 +98,19 @@ function cambiarImgPlanta(planta){
     var img = "";
     if(planta == 1){
         img= "img/gardenia.svg";
+        $('.planta > object').css('width', 'calc(var(--circulo)/1.5)');
     }
     if(planta == 2){
         img= "img/poto.svg";
     }
     if(planta == 3){
         img= "img/cactus.svg";
+        $('.planta > object').css('width', 'calc(var(--circulo)/1.19)');
     }
     if(planta == 4){
         img= "img/culantrillo.svg";
     }
-    $(".planta > img").attr("src", img);
+    $(".planta > object").attr("data", img);
     
 }
 
@@ -144,6 +153,7 @@ function cambiarPorcentajes(planta) {
             $(".humaire.concreta span").html(humaire + "%");
             $(".humagua.concreta span").html(humtierra + "%");
             $(".luz.concreta span").html(luminosidad + "%");
+            
             //Optimos
             $(".temp.optima span").html(tempopt.attr("min") + "ºC / " + tempopt.attr("max") + "ºC");
             $(".humaire.optima span").html(haiopt.attr("min") + "% / " + haiopt.attr("max") + "%");
@@ -156,7 +166,7 @@ function cambiarPorcentajes(planta) {
             $("#statcirculosvg").css("--porcentajehumti", 0 + "");
             $("#statcirculosvg").css("--porcentajelumi", 0 + "");
             setTimeout(function() {
-                $("#statcirculosvg").css("--porcentajetempe", (((parseInt(temperatura)+parseInt(tempopt.attr("min")))/parseInt(tempopt.attr("max"))*100) + ""));
+                $("#statcirculosvg").css("--porcentajetempe", "calc("+parseInt(temperatura)+"+"+parseInt(tempopt.attr("min"))+"/"+parseInt(tempopt.attr("max"))+"*100)");
                 $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
                 $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
                 $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");

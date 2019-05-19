@@ -9,11 +9,11 @@
 }
 
 #gardenia #capader{
-    transform-origin: 11em -8em;
+    transform-origin: -11em 7em;
     animation: moverCapaDer 5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
 }
 #gardenia #capaizq{
-       transform-origin: 6em 16em;
+    transform-origin: 8em 13em;
     animation: moverCapaIzq 5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
 }		
     
@@ -24,18 +24,17 @@
 }
 
 @keyframes moverCapa {
-    0%   { transform: translate(-3em,21em) rotate(-6deg);}
-    50% {transform: translate(-3em,21em) rotate(3deg);}
-    100% { transform: translate(-3em,21em) rotate(-6deg);}
+    0%   { transform: translate(0em,0em) rotateZ(0deg);}
+    50% {transform:  translate(0em,0em) rotateZ(1deg);}
+    100% { transform:  translate(0em,0em) rotateZ(0deg);}
 }
 
 @keyframes moverCapaDer {
-    0%   { transform: translate(-2.2em,21.3em) rotate(1deg);}
-    50% {transform: translate(-2.2em,21.3em) rotate(8deg);}
-    100% { transform: translate(-2.2em,21.3em) rotate(1deg);}
+    0%   { transform: translate(19.95em,5.49em) rotate(3deg);}
+    50% {transform: translate(19.95em,5.49em) rotate(-2deg);}
+    100% { transform: translate(19.95em,5.49em) rotate(3deg);}
 }
 @keyframes moverCapaIzq {
- 0% {transform: rotate(0deg) translate(-2.8em,21.7em);}
-50% {transform: rotate(-5deg) translate(-2.8em,21.7em);}
-100% {transform: rotate(0deg) translate(-2.8em,21.7em);}
-}
+ 0% {transform: rotate(-2deg) translate(15.9em, 0.1em);}
+50% {transform: rotate(5deg) translate(15.9em, 0.1em);}
+100% {transform: rotate(-2deg) translate(15.9em, 0.1em);}
