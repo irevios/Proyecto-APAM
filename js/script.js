@@ -167,7 +167,7 @@ function cambiarPorcentajes(planta) {
             $("#statcirculosvg").css("--porcentajelumi", 0 + "");
             setTimeout(function() {
                 var suma = parseInt(temperatura)+parseInt(tempopt.attr("min"))/parseInt(tempopt.attr("max"))*100;
-                $("#statcirculosvg").css("--porcentajetempe", suma);
+                $("#statcirculosvg").css("--porcentajetempe", suma+"");
                 $("#statcirculosvg").css("--porcentajehumai", parseInt(humaire) + "");
                 $("#statcirculosvg").css("--porcentajelumi", parseInt(luminosidad) + "");
                 $("#statcirculosvg").css("--porcentajehumti", parseInt(humtierra) + "");
