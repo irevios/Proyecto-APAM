@@ -401,16 +401,10 @@ path#lumibg{
     .tierra > img {
         bottom: 15%;
     }
-    .stats {
-        zoom: 0.8;
-    }
 }
 @media (max-width:820px){
     .tierra > img {
         bottom: 10%;
-    }
-    .stats {
-        zoom: 0.8;
     }
 }
 @media (max-width:770px){
