@@ -1,0 +1,34 @@
+<!-- Este es el xml que he subido a un host y he puesto el link en el script-->
+<?xml version="1.0" encoding="UTF-8"?>
+<APAM>
+	<plantas>
+		<planta id="P01" nombre="gardenia">
+			<temperatura_opt max="30" min="15"/>
+			<humedad_aire_opt max="90" min="40"/>
+			<humedad_tierra_opt max="90" min="70"/>
+			<luminosidad_opt max="90" min="60"/>
+			<emocion cantidad="78" actual="rel"/>
+		</planta>
+		<planta id="P02" nombre="poto">
+			<temperatura_opt max="40" min="18"/>
+			<humedad_aire_opt max="50" min="0"/>
+			<humedad_tierra_opt max="50" min="5"/>
+			<luminosidad_opt max="70" min="40"/>
+			<emocion cantidad="97" actual="pocha"/>
+		</planta>
+	</plantas>
+	<registros>
+		<registro fecha="02/04/2019" hora="12" id="r01" min="23" planta="P01" seg="23">
+			<temperatura>27</temperatura>
+			<humedad_aire>62</humedad_aire>
+			<humedad_tierra>81</humedad_tierra>
+			<luminosidad>73</luminosidad>
+		</registro>
+		<registro fecha="02/04/2019" hora="12" id="r02" min="40" planta="P01" seg="13">
+			<temperatura>27</temperatura>
+			<humedad_aire>40</humedad_aire>
+			<humedad_tierra>78</humedad_tierra>
+			<luminosidad>60</luminosidad>
+		</registro>
+	</registros>
+</APAM>
