@@ -82,7 +82,7 @@ function cierraAdvertencias(){
 }
 
 function compruebaAdvertencias(){
-    var advertencias "";
+    var advertencias = "";
     var valor = $("#statcirculosvg").css("--porcentajetempe");
     if(parseInt(valor) <= 0){
         advertencias += "Temperatura demasiado baja. <br>";
