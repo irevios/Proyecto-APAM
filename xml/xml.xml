@@ -1,5 +1,5 @@
-<!-- Este es el xml que he subido a un host y he puesto el link en el script-->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Este es el xml que he subido a un host y he puesto el link en el script-->
 <APAM>
 	<plantas>
 		<planta id="P01" nombre="gardenia">
