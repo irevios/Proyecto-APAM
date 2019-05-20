@@ -82,8 +82,7 @@ function cierraAdvertencias(){
 }
 
 function compruebaAdvertencias(){
-    var advertencias;
-    advertencias = "";
+    var advertencias "";
     var valor = $("#statcirculosvg").css("--porcentajetempe");
     if(parseInt(valor) <= 0){
         advertencias += "Temperatura demasiado baja. <br>";
@@ -113,7 +112,7 @@ function compruebaAdvertencias(){
         advertencias += "Demasiada luz solar. <br>";
     }
 
-    $(".advertencia .media-body").append(advertencias);        
+    $(".advertencia .media-body").text(advertencias);        
     if(advertencias != ""){
         $(".advertencia").show();
     }
