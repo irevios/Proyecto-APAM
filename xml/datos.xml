@@ -8,7 +8,7 @@
 			<luminosidad_opt max="90" min="60"/>
 			<emocion cantidad="78" actual="rel"/>
 		</planta>
-		<planta id="P02" nombre="poto">
+		<planta id="P02" nombre="anturio">
 			<temperatura_opt max="40" min="18"/>
 			<humedad_aire_opt max="50" min="0"/>
 			<humedad_tierra_opt max="50" min="5"/>

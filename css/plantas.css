@@ -17,9 +17,18 @@
     animation: moverCapaIzq 5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
 }		
 
+#anturio #cabeza{
+    transform-origin: -17em 24em;
+    animation: moverCabeza 0.3s ease-out infinite;
+}
+#anturio #brazo{
+    transform-origin: -26em 25em;
+    animation: moverBrazo 0.25s ease-out infinite;
+}
+
 #cactus #cabeza{
     transform-origin: 46% 28%;
-    animation: moverCabeza 0.5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
+    animation: moverCabezaCactus 0.5s cubic-bezier(0.5,-0.07, 0.51, 1.22) infinite;
 }
 
 #cactus #brazoder{
@@ -37,7 +46,11 @@
     50% {transform: rotate(1deg);}
     100% { transform: rotate(-3deg);}
 }
-
+@keyframes moverCabezaCactus {
+    0%   { transform: translate(0em,2em) rotate(-3deg);}
+    50% {transform: translate(0em,2em) rotate(1deg);}
+    100% { transform: translate(0em,2em) rotate(-3deg);}
+}
 @keyframes moverCapa {
     0%   { transform: translate(0em,0em) rotateZ(0deg);}
     50% {transform:  translate(0em,0em) rotateZ(1deg);}
@@ -65,3 +78,10 @@
 50% {transform: rotate(5deg);}
 100% {transform: rotate(-2deg);}
 }
+
+@keyframes moverBrazo {
+ 0% {transform: rotate(0deg);}
+50% {transform: rotate(0.5deg);}
+100% {transform: rotate(0deg);}
+}
+

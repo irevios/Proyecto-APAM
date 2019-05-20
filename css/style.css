@@ -432,6 +432,7 @@ path#lumibg{
 }
 
 .advertencia {
+    display: none;
     background-color: white;
     height: auto;
     padding: 1em;
