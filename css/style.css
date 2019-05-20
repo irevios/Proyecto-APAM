@@ -445,7 +445,7 @@ path#lumibg{
 
 .advertencia.cerrado {
     width: 4em;
-    border-radius: 50%;
+    transition: 0.5s;   
 }
 .advertencia.cerrado .media-body {
     display: none;

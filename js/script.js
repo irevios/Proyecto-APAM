@@ -74,10 +74,18 @@ function muestraOptimos(){
 
 function cierraAdvertencias(){
     if($(".advertencia").hasClass('cerrado')){
-        $(".advertencia").removeClass('cerrado');
+        $(".advertencia").css("border-radius","0");
+        setTimeout(function(){
+            $(".advertencia").removeClass('cerrado');
+        } ,500);
+
     }
     else{
-        $(".advertencia").addClass('cerrado');   
+        $(".advertencia").addClass('cerrado');
+        setTimeout(function(){
+            $(".advertencia").css("border-radius","50%");
+        } ,1000);
+
     }   
 }
 
@@ -100,7 +108,7 @@ function compruebaAdvertencias(){
     valor = $("#statcirculosvg").css("--porcentajehumti");
     if(parseInt(valor) <= 0){
         advertencias += "Insuficiente humedad en la tierra. \n";
-    }
+    }   
     if(parseInt(valor) >= 100){
         advertencias += "Demasiada humedad en la tierra. \n";
     }
