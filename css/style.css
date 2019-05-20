@@ -437,6 +437,7 @@ path#lumibg{
     padding: 1em;
     margin: 1em;
     width: 20em;
+    transition: 1s;
 }
 .advertencia img{
     width: 2em;
