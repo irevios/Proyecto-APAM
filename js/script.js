@@ -224,9 +224,10 @@ function cambiarPorcentajes(planta) {
                 $("#statcirculosvg").css("--porcentajelumi", suma + "");
                 suma = (parseInt(humtierra) - parseInt(htiopt.attr("min"))) *100 /(parseInt(htiopt.attr("max")) - parseInt(htiopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajehumti", suma + "");
+                compruebaAdvertencias();
             }, 1000);
             
-            compruebaAdvertencias();
+            
         }
     });
 }
