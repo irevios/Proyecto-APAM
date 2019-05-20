@@ -84,31 +84,31 @@ function cierraAdvertencias(){
 function compruebaAdvertencias(){
     var advertencias = "";
     var valor = $("#statcirculosvg").css("--porcentajetempe");
-    if(valor <= 0){
+    if(parseInt(valor) <= 0){
         advertencias += "Temperatura demasiado baja. <br>";
     }
-    if(valor >= 100){
+    if(parseInt(valor) >= 100){
         advertencias += "Temperatura demasiado alta. <br>";
     }
     valor = $("#statcirculosvg").css("--porcentajehumai");
-    if(valor <= 0){
+    if(parseInt(valor) <= 0){
         advertencias += "Insuficiente humedad en el aire. <br>";
     }
-    if(valor >= 100){
+    if(parseInt(valor) >= 100){
         advertencias += "Demasiada humedad en el aire. <br>";
     }
     valor = $("#statcirculosvg").css("--porcentajehumti");
-    if(valor <= 0){
+    if(parseInt(valor) <= 0){
         advertencias += "Insuficiente humedad en la tierra. <br>";
     }
-    if(valor >= 100){
+    if(parseInt(valor) >= 100){
         advertencias += "Demasiada humedad en la tierra. <br>";
     }
     valor = $("#statcirculosvg").css("--porcentajelumi");
-    if(valor <= 0){
+    if(parseInt(valor) <= 0){
         advertencias += "Necesita más luz solar. <br>";
     }
-    if(valor >= 100){
+    if(parseInt(valor) >= 100){
         advertencias += "Demasiada luz solar. <br>";
     }
 
