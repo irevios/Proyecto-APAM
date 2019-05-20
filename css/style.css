@@ -430,3 +430,22 @@ path#lumibg{
         position: absolute
     }
 }
+
+.advertencia {
+    background-color: white;
+    height: auto;
+    padding: 1em;
+    margin: 1em;
+    width: 20em;
+}
+.advertencia img{
+    width: 2em;
+}
+
+.advertencia.cerrado {
+    width: 4em;
+    border-radius: 50%;
+}
+.advertencia.cerrado .media-body {
+    display: none;
+}

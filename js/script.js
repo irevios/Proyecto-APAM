@@ -70,6 +70,55 @@ function muestraOptimos(){
     }
 }
 
+// Advertencias
+
+function cierraAdvertencias(){
+    if($(".advertencia").hasClass('cerrado')){
+        $(".advertencia").removeClass('cerrado');
+    }
+    else{
+        $(".advertencia").addClass('cerrado');   
+    }   
+}
+
+function compruebaAdvertencias(){
+    var advertencias ="";
+    if($("#statcirculosvg").css("--porcentajetempe") < 0){
+        advertencia += "Temperatura demasiado baja. <br>";
+    }
+    if($("#statcirculosvg").css("--porcentajetempe") > 100){
+        advertencia += "Temperatura demasiado alta. <br>";
+    }
+
+    if($("#statcirculosvg").css("--porcentajehumai") < 0){
+        advertencia += "Insuficiente humedad en el aire. <br>";
+    }
+    if($("#statcirculosvg").css("--porcentajehumai") > 100){
+        advertencia += "Demasiada humedad en el aire. <br>";
+    }
+
+    if($("#statcirculosvg").css("--porcentajehumti") < 0){
+        advertencia += "Insuficiente humedad en la tierra. <br>";
+    }
+    if($("#statcirculosvg").css("--porcentajehumti") > 100){
+        advertencia += "Demasiada humedad en la tierra. <br>";
+    }
+
+    if($("#statcirculosvg").css("--porcentajelumi") < 0){
+        advertencia += "Necesita más luz solar. <br>";
+    }
+    if($("#statcirculosvg").css("--porcentajelumi") > 100){
+        advertencia += "Demasiada luz solar. <br>";
+    }
+
+    $(".advertencia .media-body").append(advertencias);        
+    if(advertencias != ""){
+        $(".advertencia").show();
+    }
+    else{
+        $(".advertencia").hide();   
+    }
+}
 // Menú plantas y estadisticas radial
 function giramenu(grados, planta) {
     cambiarPorcentajes(planta);
@@ -175,6 +224,8 @@ function cambiarPorcentajes(planta) {
                 suma = (parseInt(humtierra) - parseInt(htiopt.attr("min"))) *100 /(parseInt(htiopt.attr("max")) - parseInt(htiopt.attr("min")));
                 $("#statcirculosvg").css("--porcentajehumti", suma + "");
             }, 1000);
+            
+            compruebaAdvertencias();
         }
     });
 }
