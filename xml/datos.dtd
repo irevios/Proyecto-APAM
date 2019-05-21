@@ -1,0 +1,44 @@
+<!ELEMENT APAM (plantas, emociones, registros)>
+<!ELEMENT plantas (planta+)>
+<!ELEMENT planta (temperatura_opt, humedad_aire_opt, humedad_tierra_opt, luminosidad_opt, emocion)>
+<!ATTLIST planta
+          id CDATA #REQUIRED
+          nombre CDATA #REQUIRED>
+<!ELEMENT temperatura_opt (#PCDATA)>
+<!ATTLIST temperatura_opt
+          max CDATA #REQUIRED
+          min CDATA #REQUIRED>
+<!ELEMENT humedad_aire_opt (#PCDATA)>
+<!ATTLIST humedad_aire_opt
+          max CDATA #REQUIRED
+          min CDATA #REQUIRED>
+<!ELEMENT humedad_tierra_opt (#PCDATA)>
+<!ATTLIST humedad_tierra_opt
+          max CDATA #REQUIRED
+          min CDATA #REQUIRED>
+<!ELEMENT luminosidad_opt (#PCDATA)>
+<!ATTLIST luminosidad_opt
+          max CDATA #REQUIRED
+          min CDATA #REQUIRED>
+<!ELEMENT emocion (#PCDATA)>
+<!ATTLIST emocion
+          actual CDATA #IMPLIED
+          cantidad CDATA #IMPLIED
+          id CDATA #IMPLIED
+          nombre CDATA #IMPLIED
+          rangomax CDATA #IMPLIED
+          rangomin CDATA #IMPLIED>
+<!ELEMENT emociones (emocion+)>
+<!ELEMENT registros (registro+)>
+<!ELEMENT registro (temperatura, humedad_aire, humedad_tierra, luminosidad)>
+<!ATTLIST registro
+          fecha CDATA #REQUIRED
+          hora CDATA #REQUIRED
+          id CDATA #REQUIRED
+          min CDATA #REQUIRED
+          planta CDATA #REQUIRED
+          seg CDATA #REQUIRED>
+<!ELEMENT temperatura (#PCDATA)>
+<!ELEMENT humedad_aire (#PCDATA)>
+<!ELEMENT humedad_tierra (#PCDATA)>
+<!ELEMENT luminosidad (#PCDATA)>
