@@ -1,145 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<title>APAM | Affective Plants Arduino Monitoring</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no"/>
-		<link rel="shortcut icon" href="img/favicon.icon"/>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-	</head>
-	<body>
-		<div class="cargando"></div>
-		<div class="container-fluid">
-			<!-- Menu -->
-			<div class="menu fixed-top">
-				<div class="menutop" onclick="abrirMenu()">
-					<div class="toggle"></div>
-				</div>
-				<div class="menuitem gira20" onclick="muestraOptimos()">
-					<div class="item info"></div>
-				</div>
-				<div class="menuitem gira45" onclick="regar()">
-					<div class="item regadera"></div>
-				</div>
-				<div class="menuitem gira90" onclick="giraMenu(0,1)">
-					<div class="item actu"></div>
-				</div>
+<head>
+	<title>APAM | Affective Plants Arduino Monitoring</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<link rel="shortcut icon" href="img/favicon.ico"/>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+</head>
+<body>
+	<div class="cargando"></div>
+	<div class="container-fluid">
+		<!-- Menu -->
+		<div class="menu fixed-top">
+			<div class="menutop" onclick="abrirMenu()">
+				<div class="toggle"></div>
 			</div>
-			<img src="img/cielo.jpg" class="cielo hora" alt="fondo"/>
-			<div class="row principal fixed-top">
-				<div class="col-12">
-					<div class="row centro">
-						<!-- Estadísticas concretas -->
-						<div class="stats">
-							<div class="temp concreta">
-								<div class="etiqueta">Temperatura | 								
-									<span>0&deg;C</span>
-								</div>
-							</div>
-							<div class="temp optima">
-								<div class="etiqueta">Óptima | 								
-									<span>0&deg;C / 0&deg;C</span>
-								</div>
-							</div>
-							<div class="luz concreta">
-								<div class="etiqueta">Luminosidad | 								
-									<span>0%</span>
-								</div>
-							</div>
-							<div class="luz optima">
-								<div class="etiqueta">Óptima | 								
-									<span>0% / 0%</span>
-								</div>
-							</div>
-							<div class="humaire concreta">
-								<div class="etiqueta">Humedad aire | 								
-									<span>0%</span>
-								</div>
-							</div>
-							<div class="humaire optima">
-								<div class="etiqueta">Óptima | 								
-									<span>0% / 0%</span>
-								</div>
-							</div>
-							<div class="humagua concreta">
-								<div class="etiqueta">Humedad tierra | 								
-									<span>0%</span>
-								</div>
-							</div>
-							<div class="humagua optima">
-								<div class="etiqueta">Óptima | 								
-									<span>0% / 0%</span>
-								</div>
-							</div>
-							<div class="advertencia media" onclick="cierraAdvertencias()">
-								<img src="img/advertencia.png" class="mr-3 align-self-center" alt="!"/>
-								<div class="media-body"></div>
-							</div>
-						</div>
-						<!-- Planta -->
-						<div class="regar"></div>
-						<div class="col-12 planta">
-							<object type="image/svg+xml" data="img/gardenia.svg"></object>
-						</div>
-					</div>
-					<!-- Estadísticas radial y menú plantas -->
-					<div class="row statsradial fixed-bottom justify-content-center">
-						<div class="col-8">
-							<svg width="233.7mm" height="233.7mm" version="1.1" viewBox="0 0 233.69632 233.69684"
-								xmlns="http://www.w3.org/2000/svg"  id="statcirculosvg" class="menucircular2">
-								<path id="humaibg" d="m5.78 116.31a111.07 111.07 0 0 1 111.52 -110.53 111.07 111.07 0 0 1 110.62 111.44" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="tempebg" d="m15.53 116.85a101.32 101.32 0 0 1 50.921 -87.894 101.32 101.32 0 0 1 101.58 0.45453 101.32 101.32 0 0 1 50.132 88.347" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="humtibg" d="m25.23 116.85a91.613 91.613 0 0 1 45.988 -79.444 91.613 91.613 0 0 1 91.794 0.31375 91.613 91.613 0 0 1 45.444 79.756" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="lumibg" d="m35.58 116.85a81.257 81.257 0 0 1 40.899 -70.527 81.257 81.257 0 0 1 81.526 0.47008 81.257 81.257 0 0 1 40.083 70.994" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="humai" d="m5.78 116.31a111.07 111.07 0 0 1 111.52 -110.53 111.07 111.07 0 0 1 110.62 111.44" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="tempe" d="m15.53 116.85a101.32 101.32 0 0 1 50.921 -87.894 101.32 101.32 0 0 1 101.58 0.45453 101.32 101.32 0 0 1 50.132 88.347" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="humti" d="m25.23 116.85a91.613 91.613 0 0 1 45.988 -79.444 91.613 91.613 0 0 1 91.794 0.31375 91.613 91.613 0 0 1 45.444 79.756" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<path id="lumi" d="m35.58 116.85a81.257 81.257 0 0 1 40.899 -70.527 81.257 81.257 0 0 1 81.526 0.47008 81.257 81.257 0 0 1 40.083 70.994" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
-								<circle cx="116.85" cy="116.85" r="74.923" fill="#fff" style="paint-order:normal"/>
-							</svg>
-							<div class="menucircular" onload="calculaCirculo()">
-								<ul>
-									<li id="uno" onclick="giraMenu(0,1)">
-										<div>
-											<img src="img/gardenia.png" alt="gardenia"/>
-										</div>
-									</li>
-									<li id="dos" onclick="giraMenu(90,2)">
-										<div>
-											<img src="img/anturio.png" alt="anturio"/>
-										</div>
-									</li>
-									<li id="tres" onclick="giraMenu(180,3)">
-										<div>
-											<img src="img/gardenia2.png" alt="gardenia"/>
-										</div>
-									</li>
-									<li id="cuatro" onclick="giraMenu(270,4)">
-										<div>
-											<img src="img/cactus.png" alt="cactus"/>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="menuitem gira20" onclick="muestraOptimos()">
+				<div class="item info"></div>
 			</div>
-			<!-- Tierra -->
-			<div class="row tierra fixed-bottom">
-				<div></div>
-				<img src="img/cesped.png" alt="cesped"/>
+			<div class="menuitem gira45" onclick="regar()">
+				<div class="item regadera"></div>
 			</div>
-			<!-- Nubes -->
-			<div class="nubes" onload="nubes()"></div>
+			<div class="menuitem gira90" onclick="giraMenu(0,1)">
+				<div class="item actu"></div>
+			</div>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="js/script.js"></script>
-	</body>
+		<img src="img/cielo.jpg" class="cielo hora" alt="fondo"/>
+		<div class="row principal fixed-top">
+			<div class="col-12">
+				<div class="row centro">
+					<!-- Estadísticas concretas -->
+					<div class="estadisticas esconder">
+						<div class="boton" onclick="mostrarEstadisticas()"><img src="img/boton.png" alt="<"/></div>
+						<div class="temperatura concreta">
+							<div class="etiqueta">Temperatura | 								
+								<span>0&deg;C</span>
+							</div>
+						</div>
+						<div class="temperatura optima">
+							<div class="etiqueta">Óptima | 								
+								<span>0&deg;C / 0&deg;C</span>
+							</div>
+						</div>
+						<div class="luminosidad concreta">
+							<div class="etiqueta">Luminosidad | 								
+								<span>0%</span>
+							</div>
+						</div>
+						<div class="luminosidad optima">
+							<div class="etiqueta">Óptima | 								
+								<span>0% / 0%</span>
+							</div>
+						</div>
+						<div class="humedadAire concreta">
+							<div class="etiqueta">Humedad aire | 								
+								<span>0%</span>
+							</div>
+						</div>
+						<div class="humedadAire optima">
+							<div class="etiqueta">Óptima | 								
+								<span>0% / 0%</span>
+							</div>
+						</div>
+						<div class="humedadTierra concreta">
+							<div class="etiqueta">Humedad tierra | 								
+								<span>0%</span>
+							</div>
+						</div>
+						<div class="humedadTierra optima">
+							<div class="etiqueta">Óptima | 								
+								<span>0% / 0%</span>
+							</div>
+						</div>
+						<div class="advertencia media cerrado" onclick="cierraAdvertencias()">
+							<img src="img/advertencia.png" class="mr-3 align-self-center" alt="!"/>
+							<div class="media-body"></div>
+						</div>
+					</div>
+					<!-- Planta -->
+					<div class="regar"></div>
+					<div class="col-12 planta">
+						<object type="image/svg+xml" data="img/gardenia.svg"></object>
+					</div>
+				</div>
+				<!-- Estadísticas radial y menú plantas -->
+				<div class="row porcentajes fixed-bottom justify-content-center">
+					<div class="col-8">
+						<svg width="233.7mm" height="233.7mm" version="1.1" viewBox="0 0 233.69632 233.69684"
+						xmlns="http://www.w3.org/2000/svg"  id="statcirculosvg" class="menucircular2">
+						<path id="humaibg" d="m5.78 116.31a111.07 111.07 0 0 1 111.52 -110.53 111.07 111.07 0 0 1 110.62 111.44" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="tempebg" d="m15.53 116.85a101.32 101.32 0 0 1 50.921 -87.894 101.32 101.32 0 0 1 101.58 0.45453 101.32 101.32 0 0 1 50.132 88.347" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="humtibg" d="m25.23 116.85a91.613 91.613 0 0 1 45.988 -79.444 91.613 91.613 0 0 1 91.794 0.31375 91.613 91.613 0 0 1 45.444 79.756" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="lumibg" d="m35.58 116.85a81.257 81.257 0 0 1 40.899 -70.527 81.257 81.257 0 0 1 81.526 0.47008 81.257 81.257 0 0 1 40.083 70.994" fill="none" opacity=".3" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="humai" d="m5.78 116.31a111.07 111.07 0 0 1 111.52 -110.53 111.07 111.07 0 0 1 110.62 111.44" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="tempe" d="m15.53 116.85a101.32 101.32 0 0 1 50.921 -87.894 101.32 101.32 0 0 1 101.58 0.45453 101.32 101.32 0 0 1 50.132 88.347" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="humti" d="m25.23 116.85a91.613 91.613 0 0 1 45.988 -79.444 91.613 91.613 0 0 1 91.794 0.31375 91.613 91.613 0 0 1 45.444 79.756" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<path id="lumi" d="m35.58 116.85a81.257 81.257 0 0 1 40.899 -70.527 81.257 81.257 0 0 1 81.526 0.47008 81.257 81.257 0 0 1 40.083 70.994" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" style="paint-order:normal"/>
+						<circle cx="116.85" cy="116.85" r="74.923" fill="#fff" style="paint-order:normal"/>
+					</svg>
+					<div class="menucircular" onload="calculaCirculo()">
+						<ul>
+							<li id="gardenia" onclick="giraMenu(0,1)">
+								<div>
+									<img src="img/gardenia.png" alt="gardenia"/>
+								</div>
+							</li>
+							<li id="anturio" onclick="giraMenu(90,2)">
+								<div>
+									<img src="img/anturio.png" alt="anturio"/>
+								</div>
+							</li>
+							<li id="gardenia2" onclick="giraMenu(180,3)">
+								<div>
+									<img src="img/gardenia2.png" alt="gardenia"/>
+								</div>
+							</li>
+							<li id="cactus" onclick="giraMenu(270,4)">
+								<div>
+									<img src="img/cactus.png" alt="cactus"/>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Tierra -->
+	<div class="row tierra fixed-bottom">
+		<div></div>
+		<img src="img/cesped.png" alt="cesped"/>
+	</div>
+	<!-- Nubes -->
+	<div class="nubes" onload="nubes()"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
 </html>

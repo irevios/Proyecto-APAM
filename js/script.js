@@ -28,7 +28,7 @@ $(function fondo() {
 	if (desplazar > -21000 || desplazar < -75000) {
 		$('.planta').css("filter", "hue-rotate(31deg) saturate(0.8) brightness(0.7)");
 	}
-	cambiarPorcentajes(1);
+	leeXML(1);
 	calculaCirculo();
 });
 
@@ -42,8 +42,8 @@ function numAleatorio(minimo, maximo) {
 }
 
 function generarNubes() {
-	var num1 = numAleatorio(1250, 100);
-	var num2 = numAleatorio(1250, 100);
+	var velocidadRandom1 = numAleatorio(1250, 100);
+	var velocidadRandom2 = numAleatorio(1250, 100);
 	var parte1 = numAleatorio(10, 1);
 	var parte2 = numAleatorio(4, 1);
 	var lista = ["img/nube1.png", "img/nube2.png", "img/nube3.png", "img/nube4.png", "img/nube5.png"];
@@ -52,8 +52,8 @@ function generarNubes() {
 	if (nube2 == nube) {
 		nube2 = lista[Math.floor(Math.random() * lista.length)];
 	}
-	$(".nubes").append('<img src=' + nube + ' class="nube" style="animation: nube ' + num1 + 's cubic-bezier(0.06, 0.35, 0.84, 0.32) infinite;animation-delay: ' + -num1 / parte1 + 's;"/>');
-	$(".nubes").append('<img src=' + nube2 + ' class="nube" style="animation: nube ' + num2 + 's cubic-bezier(0.43, 1.12, 0.85, 1) infinite;animation-delay: ' + -num2 / parte2 + 's;"/>');
+	$(".nubes").append('<img src=' + nube + ' class="nube" style="animation: nube ' + velocidadRandom1 + 's cubic-bezier(0.06, 0.35, 0.84, 0.32) infinite;animation-delay: ' + -velocidadRandom1 / parte1 + 's;"/>');
+	$(".nubes").append('<img src=' + nube2 + ' class="nube" style="animation: nube ' + velocidadRandom2 + 's cubic-bezier(0.43, 1.12, 0.85, 1) infinite;animation-delay: ' + -velocidadRandom2 / parte2 + 's;"/>');
 }
 
 // Menú superior
@@ -73,19 +73,32 @@ function muestraOptimos() {
 	}
 }
 
+// Estadisticas
+function mostrarEstadisticas(){
+	if ($(".estadisticas").hasClass('esconder')) {
+		$(".estadisticas").removeClass('esconder');
+		$(".boton img").css("margin","1.25em 0.25em");
+		$(".boton img").css("transform","rotate(180deg)");
+		$(".boton").addClass("gira");
+	} else {
+		$(".estadisticas").addClass('esconder');
+		$(".boton img").css("margin","1.25em 0.15em");
+		$(".boton img").css("transform","rotate(0deg)");
+		$(".boton").removeClass("gira");
+	}
+}
 // Advertencias
-
 function cierraAdvertencias() {
 	if ($(".advertencia").hasClass('cerrado')) {
-		$(".advertencia").css("border-radius", "0");
+		$(".advertencia").removeClass('cerrado');
 		setTimeout(function() {
-			$(".advertencia").removeClass('cerrado');
-		}, 500);
+			$(".advertencia > .media-body").show();
+		}, 950);
 	} else {
-		$(".advertencia").addClass('cerrado');
+		$(".advertencia > .media-body").hide();
 		setTimeout(function() {
-			$(".advertencia").css("border-radius", "50%");
-		}, 1000);
+			$(".advertencia").addClass('cerrado');
+		}, 500);
 	}
 }
 
@@ -123,8 +136,10 @@ function compruebaAdvertencias() {
 	$(".advertencia .media-body").text(advertencias);
 	if (advertencias != "") {
 		$(".advertencia").show();
+		$(".boton").removeClass("no");
 	} else {
 		$(".advertencia").hide();
+		$(".boton").addClass("no");
 	}
 }
 
@@ -150,24 +165,24 @@ function aguaCayendo() {
 
 // Menú plantas y estadisticas radial
 function giraMenu(grados, planta) {
-	cambiarPorcentajes(planta);
+	leeXML(planta);
 	cambiarImgPlanta(planta);
-	var deg = parseInt(grados);
+	var gradosGira = parseInt(grados);
 	var actual = parseInt($('body').css('--rotacion'));
-	if (actual == -270 && deg === 0) {
+	if (actual == -270 && gradosGira === 0) {
 		$('body').css('--rotacion', (-1) * 360 + 'deg');
 		setTimeout(function() {
 			$('.menucircular').css('transition', '0s');
 			$('body').css('--rotacion', 0 + 'deg');
 		}, 1000);
-	} else if (actual == 0 && deg == 270) {
+	} else if (actual == 0 && gradosGira == 270) {
 		$('body').css('--rotacion', 90 + 'deg');
 		setTimeout(function() {
 			$('.menucircular').css('transition', '0s');
 			$('body').css('--rotacion', -270 + 'deg');
 		}, 1000);
 	} else {
-		$('body').css('--rotacion', (-1) * deg + 'deg');
+		$('body').css('--rotacion', (-1) * gradosGira + 'deg');
 	}
 	$('.menucircular').css('transition', '1s');
 }
@@ -195,70 +210,101 @@ function cambiarImgPlanta(planta) {
 }
 
 // Coger datos del XML
-function cambiarPorcentajes(planta) {
+var temperatura;
+var temperaturaMin;
+var temperaturaMax;
+var humedadAire;
+var humedadAireMin;
+var humedadAireMax;
+var humedadTierra;
+var humedadTierraMin;
+var humedadTierraMax;
+var luminosidad;
+var luminosidadMin;
+var luminosidadMax;
+
+function leeXML(numPlanta) {
+	temperatura = 0;
+	humedadAire = 0;
+	humedadTierra = 0;
+	luminosidad = 0;
 	$.ajax({
 		type: "GET",
 		//url: "xml/datos.xml",
 		url: "https://raw.githubusercontent.com/irevios/apam/master/xml/datos.xml",
 		dataType: "xml",
 		success: function(xml) {
-			var id;
-			var temperatura = 0;
-			var tempopt = 0;
-			var humaire = 0;
-			var haiopt = 0;
-			var humtierra = 0;
-			var htiopt = 0;
-			var luminosidad = 0;
-			var lumiopt = 0;
-
-			$(xml).find("planta:eq(" + (planta - 1) + ")").each(function() {
-				id = $(this).attr("id");
-				tempopt = $(this).find("temperatura_opt");
-				haiopt = $(this).find("humedad_aire_opt");
-				htiopt = $(this).find("humedad_tierra_opt");
-				lumiopt = $(this).find("luminosidad_opt");
-			});
-			for (var i = 0; i < $(xml).find("registro").length && temperatura === 0; i++) {
-				$(xml).find("registro:eq(" + i + ")").each(function() {
-					if ($(this).attr("planta") == id) {
-						temperatura = $(this).find("temperatura").text();
-						humaire = $(this).find("humedad_aire").text();
-						humtierra = $(this).find("humedad_tierra").text();
-						luminosidad = $(this).find("luminosidad").text();
-					}
-				});
-			}
-			// Concretos
-			$(".temp.concreta span").html(temperatura + "ºC");
-			$(".humaire.concreta span").html(humaire + "%");
-			$(".humagua.concreta span").html(humtierra + "%");
-			$(".luz.concreta span").html(luminosidad + "%");
-
-			//Optimos
-			$(".temp.optima span").html(tempopt.attr("min") + "ºC / " + tempopt.attr("max") + "ºC");
-			$(".humaire.optima span").html(haiopt.attr("min") + "% / " + haiopt.attr("max") + "%");
-			$(".humagua.optima span").html(htiopt.attr("min") + "% / " + htiopt.attr("max") + "%");
-			$(".luz.optima span").html(lumiopt.attr("min") + "% / " + lumiopt.attr("max") + "%");
-
-			// Circular
-			$("#statcirculosvg").css("--porcentajetempe", 0 + "");
-			$("#statcirculosvg").css("--porcentajehumai", 0 + "");
-			$("#statcirculosvg").css("--porcentajehumti", 0 + "");
-			$("#statcirculosvg").css("--porcentajelumi", 0 + "");
-			setTimeout(function() {
-				var suma = (parseInt(temperatura) - parseInt(tempopt.attr("min"))) * 100 / (parseInt(tempopt.attr("max")) - parseInt(tempopt.attr("min")));
-				$("#statcirculosvg").css("--porcentajetempe", suma + "");
-				suma = (parseInt(humaire) - parseInt(haiopt.attr("min"))) * 100 / (parseInt(haiopt.attr("max")) - parseInt(haiopt.attr("min")));
-				$("#statcirculosvg").css("--porcentajehumai", suma + "");
-				suma = (parseInt(luminosidad) - parseInt(lumiopt.attr("min"))) * 100 / (parseInt(lumiopt.attr("max")) - parseInt(lumiopt.attr("min")));
-				$("#statcirculosvg").css("--porcentajelumi", suma + "");
-				suma = (parseInt(humtierra) - parseInt(htiopt.attr("min"))) * 100 / (parseInt(htiopt.attr("max")) - parseInt(htiopt.attr("min")));
-				$("#statcirculosvg").css("--porcentajehumti", suma + "");
-				compruebaAdvertencias();
-			}, 1000);
-
-
+			obtenerDatosPlanta(xml,numPlanta);
+			obtenerRegistroPlanta(xml,obtenerIdPlanta(xml,numPlanta));
+			mostrarDatosConcretos();
+			mostrarDatosOptimos();
+			mostrarPorcentajesCircular()
 		}
 	});
 }
+
+function obtenerIdPlanta(xml,numPlanta){
+	var id;
+	$(xml).find("planta:eq(" + (numPlanta - 1) + ")").each(function() {
+		id = $(this).attr("id");
+	});
+	return id;
+}
+
+function obtenerDatosPlanta(xml,numPlanta){
+	$(xml).find("planta:eq(" + (numPlanta - 1) + ")").each(function() {
+		temperaturaMin = $(this).find("temperatura_opt").attr("min");
+		temperaturaMax = $(this).find("temperatura_opt").attr("max");
+		humedadAireMin = $(this).find("humedad_aire_opt").attr("min");
+		humedadAireMax = $(this).find("humedad_aire_opt").attr("max");
+		humedadTierraMin = $(this).find("humedad_tierra_opt").attr("min");
+		humedadTierraMax = $(this).find("humedad_tierra_opt").attr("max");
+		luminosidadMin = $(this).find("luminosidad_opt").attr("min");
+		luminosidadMax = $(this).find("luminosidad_opt").attr("max");
+	});
+}
+
+function obtenerRegistroPlanta(xml,id){
+	for (var i = 0; i < $(xml).find("registro").length && temperatura == 0; i++) {
+		$(xml).find("registro:eq(" + i + ")").each(function() {
+			if ($(this).attr("planta") == id) {
+				temperatura = $(this).find("temperatura").text();
+				humedadAire = $(this).find("humedad_aire").text();
+				humedadTierra = $(this).find("humedad_tierra").text();
+				luminosidad = $(this).find("luminosidad").text();
+			}
+		});
+	}
+}
+function mostrarDatosConcretos(){
+	$(".temperatura.concreta span").html(temperatura + "ºC");
+	$(".humedadAire.concreta span").html(humedadAire + "%");
+	$(".humedadTierra.concreta span").html(humedadTierra + "%");
+	$(".luminosidad.concreta span").html(luminosidad + "%");
+}
+
+function mostrarDatosOptimos(){
+	$(".temperatura.optima span").html(temperaturaMin + "ºC / " + temperaturaMax + "ºC");
+	$(".humedadAire.optima span").html(humedadAireMin + "% / " + humedadAireMax + "%");
+	$(".humedadTierra.optima span").html(humedadTierraMin + "% / " + humedadTierraMax + "%");
+	$(".luminosidad.optima span").html(luminosidadMin + "% / " + luminosidadMax + "%");
+}
+
+function calculaPorcentaje(valor, valorMin, valorMax){
+	var porcentaje = (parseInt(valor) - parseInt(valorMin)) * 100 / (parseInt(valorMax) - parseInt(valorMin));
+	return porcentaje;
+}
+function mostrarPorcentajesCircular(){
+	$("#statcirculosvg").css("--porcentajetempe", 0 + "");
+	$("#statcirculosvg").css("--porcentajehumai", 0 + "");
+	$("#statcirculosvg").css("--porcentajehumti", 0 + "");
+	$("#statcirculosvg").css("--porcentajelumi", 0 + "");
+	setTimeout(function() {
+		$("#statcirculosvg").css("--porcentajetempe", calculaPorcentaje(temperatura, temperaturaMin, temperaturaMax) + "");
+		$("#statcirculosvg").css("--porcentajehumai", calculaPorcentaje(humedadAire, humedadAireMin, humedadAireMax) + "");
+		$("#statcirculosvg").css("--porcentajelumi", calculaPorcentaje(luminosidad, luminosidadMin, luminosidadMax) + "");
+		$("#statcirculosvg").css("--porcentajehumti", calculaPorcentaje(humedadTierra, humedadTierraMin, humedadTierraMax) + "");
+		compruebaAdvertencias();
+	}, 1000);
+}
+
