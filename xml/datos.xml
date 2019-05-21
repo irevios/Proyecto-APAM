@@ -9,9 +9,9 @@
 			<emocion cantidad="89" actual="rel"/>
 		</planta>
 		<planta id="P02" nombre="anturio">
-			<temperatura_opt max="40" min="18"/>
-			<humedad_aire_opt max="50" min="0"/>
-			<humedad_tierra_opt max="50" min="5"/>
+			<temperatura_opt max="25" min="18"/>
+			<humedad_aire_opt max="50" min="20"/>
+			<humedad_tierra_opt max="80" min="60"/>
 			<luminosidad_opt max="70" min="40"/>
 			<emocion cantidad="12" actual="pocha"/>
 		</planta>
