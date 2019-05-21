@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE APAM SYSTEM "datos.dtd">
+﻿<!DOCTYPE APAM SYSTEM "datos.dtd">
 <APAM>
 	<plantas>
 		<planta id="P01" nombre="gardenia">
@@ -41,73 +40,73 @@
 		<emocion id="poc" nombre="pocha" rangomax="20" rangomin="0"/>
 	</emociones>
 	<registros>
-		<registro fecha="02/04/2019" hora="12" id="r01" min="23" planta="P01" seg="23">
+		<registro id="r01" planta="P01" fecha="02/04/2019" hora="12" min="30" seg="23">
 			<temperatura>27</temperatura>
 			<humedad_aire>62</humedad_aire>
 			<humedad_tierra>81</humedad_tierra>
 			<luminosidad>73</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r02" min="40" planta="P01" seg="13">
+		<registro id="r02" planta="P01" fecha="02/04/2019" hora="12" min="40" seg="13">
 			<temperatura>27</temperatura>
 			<humedad_aire>40</humedad_aire>
 			<humedad_tierra>78</humedad_tierra>
 			<luminosidad>60</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="13" id="r03" min="02" planta="P01" seg="57">
+		<registro id="r03" planta="P01" fecha="02/04/2019" hora="13" min="02" seg="57">
 			<temperatura>26</temperatura>
 			<humedad_aire>54</humedad_aire>
 			<humedad_tierra>76</humedad_tierra>
 			<luminosidad>58</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r04" min="23" planta="P02" seg="23">
+		<registro id="r04" planta="P02" fecha="02/04/2019" hora="12" min="23" seg="23">
 			<temperatura>42</temperatura>
 			<humedad_aire>0</humedad_aire>
 			<humedad_tierra>7</humedad_tierra>
 			<luminosidad>68</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r05" min="40" planta="P02" seg="13">
+		<registro id="r05" planta="P02" fecha="02/04/2019" hora="12" min="40" seg="13">
 			<temperatura>27</temperatura>
 			<humedad_aire>40</humedad_aire>
 			<humedad_tierra>78</humedad_tierra>
 			<luminosidad>60</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="13" id="r06" min="02" planta="P02" seg="57">
+		<registro id="r06" planta="P02" fecha="02/04/2019" hora="13" min="02" seg="57">
 			<temperatura>26</temperatura>
 			<humedad_aire>54</humedad_aire>
 			<humedad_tierra>76</humedad_tierra>
 			<luminosidad>58</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r10" min="23" planta="P03" seg="23">
+		<registro id="r10" planta="P03" fecha="02/04/2019" hora="12" min="23" seg="23">
 			<temperatura>20</temperatura>
 			<humedad_aire>96</humedad_aire>
 			<humedad_tierra>87</humedad_tierra>
 			<luminosidad>72</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r11" min="40" planta="P03" seg="13">
+		<registro id="r11" planta="P03" fecha="02/04/2019" hora="12" min="40" seg="13">
 			<temperatura>27</temperatura>
 			<humedad_aire>40</humedad_aire>
 			<humedad_tierra>78</humedad_tierra>
 			<luminosidad>60</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="13" id="r12" min="02" planta="P03" seg="57">
+		<registro id="r12" planta="P03" fecha="02/04/2019" hora="13" min="02" seg="57">
 			<temperatura>26</temperatura>
 			<humedad_aire>54</humedad_aire>
 			<humedad_tierra>76</humedad_tierra>
 			<luminosidad>58</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r07" min="23" planta="P04" seg="23">
+		<registro id="r07" planta="P04" fecha="02/04/2019" hora="12" min="23" seg="23">
 			<temperatura>16</temperatura>
 			<humedad_aire>28</humedad_aire>
 			<humedad_tierra>52</humedad_tierra>
 			<luminosidad>85</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="12" id="r08" min="40" planta="P04" seg="13">
+		<registro id="r08" planta="P04" fecha="02/04/2019" hora="12" min="40" seg="13">
 			<temperatura>27</temperatura>
 			<humedad_aire>40</humedad_aire>
 			<humedad_tierra>78</humedad_tierra>
 			<luminosidad>75</luminosidad>
 		</registro>
-		<registro fecha="02/04/2019" hora="13" id="r09" min="02" planta="P04" seg="57">
+		<registro id="r09" planta="P04" fecha="02/04/2019" hora="13" min="02" seg="57">
 			<temperatura>26</temperatura>
 			<humedad_aire>54</humedad_aire>
 			<humedad_tierra>76</humedad_tierra>
