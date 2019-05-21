@@ -80,7 +80,7 @@
 			<temperatura>20</temperatura>
 			<humedad_aire>96</humedad_aire>
 			<humedad_tierra>87</humedad_tierra>
-			<luminosidad>42</luminosidad>
+			<luminosidad>72</luminosidad>
 		</registro>
 		<registro fecha="02/04/2019" hora="12" id="r11" min="40" planta="P03" seg="13">
 			<temperatura>27</temperatura>
