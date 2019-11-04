@@ -10,6 +10,6 @@ Partes:
 [Vista en directo](http://apam-ivios.netlify.com)
 
 I.E.S. Hermanos Machado
-Lenguaje de Marcas
-Irene Viñas
-Mayo 2019
+..Lenguaje de Marcas
+..Irene Viñas
+..Mayo 2019
