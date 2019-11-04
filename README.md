@@ -7,6 +7,8 @@ Partes:
 * [Datos](xml/datos.xml) - Datos ficticios que recibiría la aplicación.
 * [Animaciones](css/plantas.css) - Animaciones que realiza las diferentes plantas.
 
+[Vista en directo](http://apam-iv.netlify.com)
+
 I.E.S. Hermanos Machado
 Lenguaje de Marcas
 Irene Viñas
