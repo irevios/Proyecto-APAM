@@ -1,17 +1,20 @@
-# Proyecto APAM
-## APAM | Affective Plants Arduino Monitoring
+# APAM | Affective Plants Arduino Monitoring
 
-Interfaz orientada a móviles para monitorizar una planta con sensores, y según los datos recibidos presenta diferentes emociones.
-![APAM](img/apam.gif)
+**APAM** is a mobile-oriented interface for monitoring a plant equipped with sensors. Based on the data received, the application visually represents the plant's emotions.
 
+![APAM in Action](img/apam.gif)
 
-#### Partes:
-* [Inicio](index.html) - Página principal donde se visualiza los datos y la planta, además de diferentes menús.
-* [Datos](xml/datos.xml) - Datos ficticios que recibiría la aplicación.
-* [Animaciones](css/plantas.css) - Animaciones que realiza las diferentes plantas.
+## Features
 
-[Vista en directo](http://apam-ivios.netlify.com)
+### Components
+- **[Home](index.html):**  
+  The main page displays sensor data and the plant's visual representation, along with access to various menus.
+  
+- **[Data](xml/datos.xml):**  
+  Sample XML data simulating the information the application would receive from the sensors.
+  
+- **[Animations](css/plantas.css):**  
+  CSS animations bring the plants to life by expressing different emotions based on the data.
 
-Todos los elementos visuales han sido creados por mi misma.
-
-I.E.S. Hermanos Machado | Lenguaje de Marcas | Irene Viñas | Mayo 2019
+### Live Demo
+Experience the application here: [Live View](https://apam-ivios.netlify.app)
